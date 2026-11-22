@@ -14,6 +14,7 @@ from emotionet.models import EmotionetLexicon, MatchSpan, Synset
 DEFAULT_NEGATION_MARKERS = {
     "không", "chẳng", "chả", "chưa", "ko", "k", "khum", "đếch", "chớ", "đâu có",
     "không hề", "chả có", "chẳng có", "hổng", "hem", "chớ hề", "không thể",
+    "không ai", "chẳng ai", "chả ai", "không một ai",
 }
 
 # Intensity modifiers (amplifiers and downtoners)
@@ -39,9 +40,10 @@ DEFAULT_INTENSITY_MARKERS = {
     "sương sương": "low",
 }
 
-# Contrastive conjunctions indicating clause shift
+# Contrastive conjunctions indicating clause shift (stops preceding negation scope)
 DEFAULT_CONTRASTIVE_MARKERS = {
     "nhưng", "tuy nhiên", "dẫu vậy", "cơ mà", "thế nhưng", "nhưng mà", "mặc dù",
+    "song", "ngược lại", "trái lại", "thế mà", "vậy mà", "dù vậy", "tuy vậy",
 }
 
 # Emoji & Emoticon mappings to ViGoEmotions
@@ -158,6 +160,11 @@ class PhraseMatcher:
         self.repeated_punct_regex = re.compile(r"([!?.,])\1{1,}")
         self.elongated_char_regex = re.compile(r"([a-zA-ZÀ-ỹ])\1{1,}")
 
+        # Contrastive boundary regex (stops negation scope)
+        contrastive_sorted = sorted(self.contrastive_markers, key=lambda x: (len(x.split()), len(x)), reverse=True)
+        contrastive_patterns = [rf"(?<![\wÀ-ỹ]){re.escape(m)}(?![\wÀ-ỹ])" for m in contrastive_sorted]
+        self.contrastive_boundary_regex = re.compile("|".join(contrastive_patterns), flags=re.IGNORECASE) if contrastive_patterns else None
+
 
         # Emoji / emoticon regex
         emoticon_patterns = [re.escape(k) for k in self.emoji_mappings.keys()]
@@ -169,8 +176,11 @@ class PhraseMatcher:
         else:
             self.emoji_regex = re.compile(emoji_unicode_range)
 
-    def match(self, text: str) -> MatchResult:
+    def match(self, text: str, max_chars: Optional[int] = None) -> MatchResult:
         """Find phrase matches, context scopes, and discourse features in text."""
+        if max_chars is not None and max_chars > 0:
+            text = text[:max_chars]
+
         norm_text = unicodedata.normalize("NFC", text)
         lower_text = norm_text.lower()
 
@@ -202,8 +212,8 @@ class PhraseMatcher:
 
                 is_multiword = " " in matched_str
 
-                # Check negation scope (preceding window)
-                in_negation = self._check_negation_scope(lower_text, start)
+                # Check negation scope (preceding window and prior matched spans)
+                in_negation = self._check_negation_scope(lower_text, start, prior_spans=spans)
 
                 # Check intensity modifier
                 intensity_mod = self._check_intensity(lower_text, start, end)
@@ -256,32 +266,63 @@ class PhraseMatcher:
             unmapped_emoji_count=unmapped_emoji_count,
         )
 
-    def _check_negation_scope(self, text: str, span_start: int) -> bool:
+    def _check_negation_scope(
+        self,
+        text: str,
+        span_start: int,
+        prior_spans: Optional[List[MatchSpan]] = None,
+    ) -> bool:
         """Check whether span_start is within the scope of a preceding negation."""
         prefix = text[:span_start]
-        # Clause boundaries stop negation scope: . , ; ! ? \n or contrastive markers
-        last_boundary = max(
-            prefix.rfind("."),
-            prefix.rfind(","),
-            prefix.rfind(";"),
-            prefix.rfind("!"),
-            prefix.rfind("?"),
-            prefix.rfind("\n"),
-        )
+
+        boundaries: List[int] = []
+
+        # Clause punctuation boundaries stop negation scope: . , ; ! ? \n : — -
+        # Use m.end() so punctuation characters are completely excluded from clause_prefix.
+        for m in re.finditer(r"[\.,;:!?\n—\-]+", prefix):
+            boundaries.append(m.end())
+
+        # Contrastive markers also stop negation scope (e.g. "nhưng", "tuy nhiên", "nhưng mà")
+        if self.contrastive_boundary_regex:
+            for m in self.contrastive_boundary_regex.finditer(prefix):
+                boundaries.append(m.end())
+
+        # Structural adversative handling for "mà":
+        # In constructions like "không buồn mà vui", "buồn" is an emotion word preceding "mà".
+        # "buồn" absorbed the negation, so the second emotion "vui" after "mà" is NOT negated.
+        # In contrast, in "không ai mà vui", "ai" is NOT an emotion word, so "không ai" continues to negate "vui".
+        if prior_spans:
+            adversative_ma_regex = re.compile(r"(?<![\wÀ-ỹ])(?:mà|mà\s+lại|mà\s+là)(?![\wÀ-ỹ])", flags=re.IGNORECASE)
+            for m in adversative_ma_regex.finditer(prefix):
+                ma_start = m.start()
+                # Check if there is a prior emotion span before "mà" inside the current clause
+                curr_last_boundary = max(boundaries, default=-1)
+                has_prior_emotion = any(
+                    s.end_char <= ma_start and s.end_char > curr_last_boundary
+                    for s in prior_spans
+                )
+                if has_prior_emotion:
+                    boundaries.append(m.end())
+
+        last_boundary = max(boundaries) if boundaries else -1
         if last_boundary != -1:
-            clause_prefix = prefix[last_boundary + 1:]
+            clause_prefix = prefix[last_boundary:]
         else:
             clause_prefix = prefix
 
         words = clause_prefix.strip().split()
-        preceding_words = words[-self.negation_window_words:] if words else []
+        # Clean any remaining punctuation from tokens
+        cleaned_words = [re.sub(r"^[^\wÀ-ỹ]+|[^\wÀ-ỹ]+$", "", w) for w in words]
+        cleaned_words = [w for w in cleaned_words if w]
+        preceding_words = cleaned_words[-self.negation_window_words:] if cleaned_words else []
 
         # Check multi-word negations first
-        preceding_phrase = " ".join(preceding_words)
+        preceding_phrase = " ".join(preceding_words).lower()
         for neg in self.negation_markers:
-            if " " in neg and neg in preceding_phrase:
+            neg_norm = neg.lower()
+            if " " in neg_norm and neg_norm in preceding_phrase:
                 return True
-            if neg in preceding_words:
+            if neg_norm in [w.lower() for w in preceding_words]:
                 return True
 
         return False

@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
+from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 
 import numpy as np
 
@@ -72,9 +72,11 @@ class FeatureExtractor:
         self,
         matcher: PhraseMatcher,
         manifest: Optional[FeatureManifest] = None,
+        truncate_fn: Optional[Callable[[str], str]] = None,
     ) -> None:
         self.matcher = matcher
         self.manifest = manifest or FeatureManifest()
+        self.truncate_fn = truncate_fn
         self.emotion_labels = EMOTION_27_LABELS
         self.emotion_to_idx = EMOTION_27_TO_IDX
 
@@ -155,14 +157,15 @@ class FeatureExtractor:
 
         return vector
 
-    def extract(self, text: str) -> np.ndarray:
+    def extract(self, text: str, max_chars: Optional[int] = None) -> np.ndarray:
         """Match text and return 171-d feature vector."""
-        res = self.matcher.match(text)
+        target_text = self.truncate_fn(text) if self.truncate_fn is not None else text
+        res = self.matcher.match(target_text, max_chars=max_chars)
         return self.extract_from_result(res)
 
-    def extract_batch(self, texts: Sequence[str]) -> np.ndarray:
+    def extract_batch(self, texts: Sequence[str], max_chars: Optional[int] = None) -> np.ndarray:
         """Extract feature matrix of shape [N, 171]."""
-        batch_vecs = [self.extract(t) for t in texts]
+        batch_vecs = [self.extract(t, max_chars=max_chars) for t in texts]
         if batch_vecs:
             return np.stack(batch_vecs, axis=0)
         return np.zeros((0, self.manifest.total_dim), dtype=np.float32)

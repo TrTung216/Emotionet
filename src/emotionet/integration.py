@@ -60,19 +60,24 @@ class EmotionetClassifierHead(nn.Module):
         Args:
             h: Pooled hidden state from xLSTM [B, hidden_dim].
             g: Emotionet features [B, feature_dim]. If None, a zero vector is used.
-            column_mask: Boolean tensor of shape [feature_dim] or [B, feature_dim].
+            column_mask: Boolean/int tensor of shape [feature_dim] or [B, feature_dim].
         
         Returns:
             Logits of shape [B, num_labels].
         """
         batch_size = h.size(0)
 
+        # 1. Determine feature branch activity at chromosome/configuration level
+        # This condition is purely a configuration check, NEVER depending on batch contents!
+        features_active = True
         if g is None:
-            g = torch.zeros(
-                (batch_size, self.feature_dim),
-                dtype=h.dtype,
-                device=h.device,
-            )
+            features_active = False
+        elif column_mask is not None:
+            # Check if any gene in column_mask is active
+            if (column_mask > 0).sum() == 0:
+                features_active = False
+
+        if not features_active:
             g_proj = torch.zeros(
                 (batch_size, self.projection_dim),
                 dtype=h.dtype,
@@ -80,22 +85,124 @@ class EmotionetClassifierHead(nn.Module):
             )
         else:
             if column_mask is not None:
-                # Mask out inactive features
-                g = g * column_mask.to(dtype=g.dtype, device=g.device)
-
-            # Check if feature vector is completely inactive (e.g. all-zero mask)
-            if g.abs().sum() == 0:
-                g_proj = torch.zeros(
-                    (batch_size, self.projection_dim),
-                    dtype=h.dtype,
-                    device=h.device,
-                )
+                g_masked = g * column_mask.to(dtype=g.dtype, device=g.device)
             else:
-                g_proj = self.feature_proj(g)
+                g_masked = g
+
+            # Sample-level indicator: strictly per-row [B, 1], independent across batch samples!
+            # If a sample has no active features (all 0), its projection is strictly 0.
+            sample_active = (g_masked.abs().sum(dim=-1, keepdim=True) > 0).to(dtype=h.dtype)
+            g_proj = self.feature_proj(g_masked) * sample_active
 
         fused = torch.cat([h, g_proj], dim=-1)
         logits = self.classifier(fused)
         return logits
+
+
+def truncate_text_to_visible_window(
+    text: str,
+    max_length: int,
+    tokenizer: Optional[Any] = None,
+    tokenizer_fn: Optional[Callable[[str], List[int]]] = None,
+    tokenizer_decode_fn: Optional[Callable[[List[int]], str]] = None,
+) -> str:
+    """Truncate text strictly to the token window visible to the encoder,
+    preventing dictionary features from reading truncated words.
+    """
+    if max_length <= 0:
+        return ""
+
+    if tokenizer is not None and hasattr(tokenizer, "encode") and hasattr(tokenizer, "decode"):
+        tokens = tokenizer.encode(text)
+        if len(tokens) > max_length:
+            return tokenizer.decode(tokens[:max_length])
+        return text
+    elif tokenizer_fn is not None and tokenizer_decode_fn is not None:
+        tokens = tokenizer_fn(text)
+        if len(tokens) > max_length:
+            return tokenizer_decode_fn(tokens[:max_length])
+        return text
+    elif tokenizer_fn is not None:
+        tokens = tokenizer_fn(text)
+        if len(tokens) <= max_length:
+            return text
+
+        words = text.split()
+        low, high = 1, len(words)
+        best_text = ""
+        while low <= high:
+            mid = (low + high) // 2
+            cand = " ".join(words[:mid])
+            if len(tokenizer_fn(cand)) <= max_length:
+                best_text = cand
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        # If even a single word exceeds max_length (e.g. char tokenizer or subwords with max_length=1),
+        # slice characters of the first word so that len(tokenizer_fn(best_text)) <= max_length is strictly guaranteed.
+        if not best_text and words:
+            first_word = words[0]
+            low_c, high_c = 1, len(first_word)
+            while low_c <= high_c:
+                mid_c = (low_c + high_c) // 2
+                cand_c = first_word[:mid_c]
+                if len(tokenizer_fn(cand_c)) <= max_length:
+                    best_text = cand_c
+                    low_c = mid_c + 1
+                else:
+                    high_c = mid_c - 1
+
+        return best_text
+    else:
+        # Word-level fallback
+        words = text.split()
+        if len(words) > max_length:
+            return " ".join(words[:max_length])
+        return text
+
+
+def validate_precomputed_features_cache(
+    precomputed: Union[np.ndarray, Dict[str, Any]],
+    visible_texts: List[str],
+    max_length: int,
+    feature_extractor: Optional[FeatureExtractor] = None,
+    ids: Optional[List[str]] = None,
+) -> np.ndarray:
+    """Validate that precomputed features cache matches the dataset and token window."""
+    if isinstance(precomputed, dict):
+        cached_max_len = precomputed.get("max_length")
+        if cached_max_len is not None and cached_max_len != max_length:
+            raise ValueError(
+                f"precomputed_features cache max_length mismatch: cache was created with max_length={cached_max_len}, "
+                f"but dataset requested max_length={max_length}."
+            )
+        feats = precomputed["features"]
+    else:
+        feats = precomputed
+
+    if len(feats) != len(visible_texts):
+        raise ValueError(
+            f"Precomputed features length {len(feats)} does not match dataset length {len(visible_texts)}"
+        )
+
+    # Audit sample consistency against visible_text if feature_extractor is available
+    if feature_extractor is not None:
+        for i, vis_text in enumerate(visible_texts):
+            expected_feat = feature_extractor.extract(vis_text)
+            cached_feat = feats[i]
+            # Check F1/F2 emotion positions (first 54 dims): if visible_text has 0 emotion counts,
+            # but cached_feat has non-zero emotion counts, it proves cache was created on an untruncated window!
+            if expected_feat[:54].sum() == 0 and cached_feat[:54].sum() > 0:
+                sample_id = ids[i] if ids else str(i)
+                raise ValueError(
+                    f"precomputed_features cache validation failed at sample {i} (id={sample_id}): "
+                    f"visible_text='{vis_text}' contains no lexical emotion matches in the token window, "
+                    f"but cached feature vector contains active emotion features ({cached_feat[:54].sum():.2f}). "
+                    f"Cache was created on a different token truncation window."
+                )
+
+    return feats
 
 
 class ViGoEmotionsDataset(Dataset):
@@ -107,16 +214,22 @@ class ViGoEmotionsDataset(Dataset):
         num_labels: int = 28,
         feature_extractor: Optional[FeatureExtractor] = None,
         precomputed_features: Optional[np.ndarray] = None,
+        tokenizer: Optional[Any] = None,
         tokenizer_fn: Optional[Callable[[str], List[int]]] = None,
+        tokenizer_decode_fn: Optional[Callable[[List[int]], str]] = None,
         max_length: int = 128,
         pad_id: int = 0,
+        truncate_dictionary_text: bool = True,
     ) -> None:
         self.csv_path = Path(csv_path)
         self.num_labels = num_labels
         self.feature_extractor = feature_extractor
+        self.tokenizer = tokenizer
         self.tokenizer_fn = tokenizer_fn
+        self.tokenizer_decode_fn = tokenizer_decode_fn
         self.max_length = max_length
         self.pad_id = pad_id
+        self.truncate_dictionary_text = truncate_dictionary_text
 
         self.ids: List[str] = []
         self.texts: List[str] = []
@@ -124,14 +237,32 @@ class ViGoEmotionsDataset(Dataset):
 
         self._load_data()
 
-        if precomputed_features is not None:
-            if len(precomputed_features) != len(self.texts):
-                raise ValueError(
-                    f"Precomputed features length {len(precomputed_features)} does not match dataset length {len(self.texts)}"
+        # Build visible text window to ensure dictionary feature extractor does NOT
+        # read text truncated by the tokenizer/encoder.
+        if self.truncate_dictionary_text:
+            self.visible_texts = [
+                truncate_text_to_visible_window(
+                    t,
+                    self.max_length,
+                    tokenizer=self.tokenizer,
+                    tokenizer_fn=self.tokenizer_fn,
+                    tokenizer_decode_fn=self.tokenizer_decode_fn,
                 )
-            self.features = precomputed_features
+                for t in self.texts
+            ]
+        else:
+            self.visible_texts = list(self.texts)
+
+        if precomputed_features is not None:
+            self.features = validate_precomputed_features_cache(
+                precomputed_features,
+                visible_texts=self.visible_texts,
+                max_length=self.max_length,
+                feature_extractor=self.feature_extractor,
+                ids=self.ids,
+            )
         elif feature_extractor is not None:
-            self.features = feature_extractor.extract_batch(self.texts)
+            self.features = feature_extractor.extract_batch(self.visible_texts)
         else:
             self.features = np.zeros((len(self.texts), 171), dtype=np.float32)
 
@@ -160,15 +291,30 @@ class ViGoEmotionsDataset(Dataset):
         return len(self.texts)
 
     def __getitem__(self, idx: int) -> Dict[str, Any]:
+        raw_text = self.texts[idx]
+        vis_text = self.visible_texts[idx]
         item: Dict[str, Any] = {
             "id": self.ids[idx],
-            "text": self.texts[idx],
+            "raw_text": raw_text,
+            "text": vis_text,
             "target": torch.from_numpy(self.targets[idx]),
             "feature": torch.from_numpy(self.features[idx]),
         }
 
-        if self.tokenizer_fn is not None:
-            token_ids = self.tokenizer_fn(self.texts[idx])
+        if self.tokenizer is not None and hasattr(self.tokenizer, "encode"):
+            tokens = self.tokenizer.encode(raw_text)
+            if len(tokens) > self.max_length:
+                tokens = tokens[:self.max_length]
+            mask = [1] * len(tokens)
+            if len(tokens) < self.max_length:
+                pad_len = self.max_length - len(tokens)
+                tokens.extend([self.pad_id] * pad_len)
+                mask.extend([0] * pad_len)
+            item["input_ids"] = torch.tensor(tokens, dtype=torch.long)
+            item["attention_mask"] = torch.tensor(mask, dtype=torch.float32)
+
+        elif self.tokenizer_fn is not None:
+            token_ids = self.tokenizer_fn(raw_text)
             # Truncate and pad
             if len(token_ids) > self.max_length:
                 token_ids = token_ids[:self.max_length]
@@ -177,6 +323,9 @@ class ViGoEmotionsDataset(Dataset):
                 pad_len = self.max_length - len(token_ids)
                 token_ids.extend([self.pad_id] * pad_len)
                 mask.extend([0] * pad_len)
+
+            item["input_ids"] = torch.tensor(token_ids, dtype=torch.long)
+            item["attention_mask"] = torch.tensor(mask, dtype=torch.float32)
 
             item["input_ids"] = torch.tensor(token_ids, dtype=torch.long)
             item["attention_mask"] = torch.tensor(mask, dtype=torch.float32)
