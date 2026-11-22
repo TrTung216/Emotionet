@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "status": "candidate_only",
+  "source_files": {
+    "nrc": {
+      "filename": "NRC-Emotion-Lexicon.zip",
+      "sha256": "4edcbd00b1d38ace19ecebca17a50ce08719785b9476cd12d31532eff0fc34e6",
+      "bytes": 25878449
+    },
+    "vnemolex": {
+      "filename": "VnEmoLex.xlsx",
+      "sha256": "48325a5bbcd6d154f5c5c4cbf8be8f4890f2ee288635e5b6114d43eb7ff3d78a",
+      "bytes": 640696
+    }
+  },
+  "sources": {
+    "nrc": {
+      "rows": 14154,
+      "unique_normalized_forms": 10313,
+      "duplicate_form_rows_beyond_first": 3841,
+      "forms_with_differing_association_vectors": 1593,
+      "rows_with_missing_flags": 0,
+      "missing_flag_cells": 0,
+      "rows_with_any_emotion": 4454,
+      "association_counts": {
+        "anger": 1245,
+        "anticipation": 837,
+        "disgust": 1056,
+        "fear": 1474,
+        "joy": 687,
+        "sadness": 1187,
+        "surprise": 532,
+        "trust": 1230,
+        "positive": 2308,
+        "negative": 3316
+      }
+    },
+    "vnemolex": {
+      "rows": 10627,
+      "unique_normalized_forms": 10626,
+      "duplicate_form_rows_beyond_first": 1,
+      "forms_with_differing_association_vectors": 1,
+      "rows_with_missing_flags": 4,
+      "missing_flag_cells": 4,
+      "rows_with_any_emotion": 4414,
+      "association_counts": {
+        "anger": 720,
+        "anticipation": 1502,
+        "disgust": 926,
+        "fear": 815,
+        "joy": 1176,
+        "sadness": 914,
+        "surprise": 596,
+        "trust": 1148,
+        "positive": 2524,
+        "negative": 2896
+      }
+    }
+  },
+  "shared_normalized_forms": 2948,
+  "review": {
+    "targets": 66,
+    "found_in_any_source": 62,
+    "found_in_both_sources": 40,
+    "not_found": 4,
+    "proposed_labels": 27,
+    "approved": 0
+  },
+  "target_config_sha256": "e69a8856daa75f420282bd21c1f9b8b1b4a6b63382840dd1c3819a7c959fa4c0",
+  "interpretation": [
+    "NRC and VnEmoLex are not independent evidence sources; no confidence boost for agreement.",
+    "Same spelling is grouped for inspection only, never merged into a sense or synset.",
+    "Source 0/1 flags mean association, not intensity; missing flags remain null.",
+    "Proposed ViGoEmotions labels are AI-assisted review suggestions, not imported annotations.",
+    "No automatic mapping from anticipation/trust to fine-grained ViGoEmotions labels.",
+    "All outputs are local review artifacts, not licensed publication-ready lexicons."
+  ]
+}

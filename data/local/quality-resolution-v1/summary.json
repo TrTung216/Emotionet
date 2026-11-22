@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "imported_at": "2026-11-20T16:06:47.219499+00:00",
+  "resolved_rows": 6,
+  "unchanged_other_rows": 149,
+  "sample_pairs": 155,
+  "distinct_train_sentences": 148,
+  "decisions": {
+    "matches_sense": 143,
+    "wrong_sense": 8,
+    "uncertain": 4
+  },
+  "sense_sentence_label_mismatches": [
+    {
+      "dataset_id": "tik012211",
+      "sense_id": "seed_47143a1fccaa31d5_s2",
+      "sense_labels": [
+        "anger"
+      ],
+      "sentence_labels": [
+        "remorse",
+        "annoyance",
+        "disgust"
+      ]
+    }
+  ],
+  "decision_scope": "Recorded user review resolution; not independently validated gold WSD labels.",
+  "inputs": {
+    "submitted_quality_queue": {
+      "path": "data\\local\\sense-match-quality-v1\\quality-review-queue.csv",
+      "sha256": "57a8551e5e102ac363988273ac2cfb6af252f5651c500458ac06709427952b74"
+    },
+    "submitted_samples": {
+      "path": "data\\local\\seed-coverage-v2\\match-review-samples.csv",
+      "sha256": "52ed87d9825b272e6dc9a887b02e495e40723ef9da2e4bdffa0b7776eb678d6a"
+    },
+    "previous_samples": {
+      "path": "data\\local\\sense-match-review-v1\\match_review.csv",
+      "sha256": "fbcb354b50a5cb24e9200b811dfec98136ff97e4d2e1217ff4c86892de7b6dca"
+    },
+    "accepted_senses": {
+      "path": "data\\local\\sense-match-review-v1\\accepted-split-senses.jsonl",
+      "sha256": "b6e8064f8c412cbc4a85e6ed923ef61f9db70800cba499586788fce7e4eaddd6"
+    },
+    "train": {
+      "path": "D:\\NCKH_GA+LSTM_Emotion_Recognition\\data_external\\ViGoEmotions\\train.csv",
+      "sha256": "9abcb2b7d9fadd9da043a3af43e8ee569f7099d87d20daf39a69e7e1a76c5624"
+    },
+    "taxonomy": {
+      "path": "configs\\vigoemotions-labels.json",
+      "sha256": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b"
+    }
+  },
+  "output_sha256": {
+    "accepted_senses.jsonl": "b6e8064f8c412cbc4a85e6ed923ef61f9db70800cba499586788fce7e4eaddd6",
+    "previous_samples.csv": "fbcb354b50a5cb24e9200b811dfec98136ff97e4d2e1217ff4c86892de7b6dca",
+    "resolved-contexts.jsonl": "009db65a9aa9035a62e67e7cacbd5d2f4f06e8fe4f68b739c91ad840cd578c6f",
+    "submitted_quality_queue.csv": "57a8551e5e102ac363988273ac2cfb6af252f5651c500458ac06709427952b74",
+    "submitted_samples.csv": "52ed87d9825b272e6dc9a887b02e495e40723ef9da2e4bdffa0b7776eb678d6a",
+    "taxonomy.json": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b"
+  }
+}

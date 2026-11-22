@@ -1,0 +1,232 @@
+[
+  {
+    "review_id": "seed_9e83ca9df03a047b",
+    "term": "buồn cười",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "sense_gloss": {
+        "previous": "Cảm giác muốn cười, thấy khôi hài hoặc kỳ cục trước sự việc",
+        "submitted": "Cảm giác muốn cười, thấy khôi hài, vui nhộn trước sự việc hoặc tình huống"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Có hai hướng dùng: (1) hài hước vui vẻ (amusement: 'câu chuyện rất buồn cười'); (2) châm biếm, khó chịu trước điều phi lý ('thấy buồn cười cho thói đạo đức giả'). Giữ sense (1) cho seed amusement.",
+        "submitted": "Chốt nghĩa khôi hài, gây cười (amusement: 'câu chuyện rất buồn cười'). Loại trừ nghĩa mỉa mai, khó chịu trước điều phi lý ('thấy buồn cười cho thói đạo đức giả')."
+      }
+    }
+  },
+  {
+    "review_id": "seed_4be1e91ff9884ad8",
+    "term": "thương",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "sense_gloss": {
+        "previous": "Tình cảm gắn bó, xót xa và muốn bao bọc, nâng đỡ người khác",
+        "submitted": "Tình cảm gắn bó tha thiết, xót xa và muốn bao bọc, nâng đỡ người khác"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Từ đa nghĩa và đồng âm: NRC có dòng gán spear (vũ khí/ngọn giáo - anger/fear). Cần tách biệt hoàn toàn nghĩa danh từ vũ khí; chỉ giữ sense động từ/tính từ tình cảm (thương xót, yêu thương: 'thương em vất vả').",
+        "submitted": "Chốt hai nét nghĩa tình cảm: yêu thương sâu sắc (love) và xót thương, chở che (caring: 'thương em vất vả'). Loại bỏ hoàn toàn nghĩa danh từ vũ khí (spear trong NRC: anger/fear) và thương tích."
+      }
+    }
+  },
+  {
+    "review_id": "seed_39ef2d16ef7104c0",
+    "term": "lo lắng cho",
+    "changes": {
+      "decision": {
+        "previous": "needs_evidence",
+        "submitted": "accept"
+      },
+      "reviewed_emotions": {
+        "previous": "caring",
+        "submitted": "caring;nervousness"
+      },
+      "sense_gloss": {
+        "previous": "Hướng sự bận tâm, âu yếm và chở che đến an nguy của người khác",
+        "submitted": "Hướng sự bận tâm, âu yếm và chở che đến an nguy của người khác hoặc tương lai"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Ví dụ tự soạn: 'Mẹ luôn lo lắng cho con khi đi học xa nhà'. Chưa có chuỗi khớp trong NRC/VnEmoLex, giữ needs_evidence chờ bổ sung bằng chứng từ ngữ liệu mạng xã hội.",
+        "submitted": "Bổ sung câu từ tập train ViGoEmotions: (1) Cụm chính xác 'lo lắng cho': 'Đúng là mình luôn lo lắng cho tương lai, và quả thật là những gì mình lo sợ thì nó đã thực sự xảy ra...' [nervousness, remorse, fear]. (2) Biến thể 'lo cho' (17 câu trong train): '...thương và lo cho em của nó đang nằm ở viện nhé...' [caring, admiration, love]. Chốt seed cho caring (người thân) và nervousness (tương lai)."
+      }
+    }
+  },
+  {
+    "review_id": "seed_b1055622fff4943c",
+    "term": "nhẹ lòng",
+    "changes": {
+      "decision": {
+        "previous": "needs_evidence",
+        "submitted": "accept"
+      },
+      "sense_gloss": {
+        "previous": "Cảm giác không còn gánh nặng hay vướng bận lo nghĩ trong tâm trí",
+        "submitted": "Tâm trạng thanh thản, khoan khoái khi trút bỏ được gánh nặng hoặc mối lo nghĩ"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Ví dụ tự soạn: 'Nói ra được sự thật khiến tôi thấy nhẹ lòng đi rất nhiều'. Chưa có chuỗi khớp trong hai nguồn từ điển, cần kiểm chứng thêm trên ngữ liệu thực tế.",
+        "submitted": "Bổ sung bằng chứng từ tập train ViGoEmotions (cả 3 câu đều mang nhãn relief): 'Thực sự cảm ơn chị Giang nhiều lắm... Hôm nay tình cờ được nghe chị mà em nhẹ lòng hẳn' [gratitude, relief]; 'Nghe xong thấy nhẹ lòng quá. Mà chủ đề gì cũng có luôn ❤' [gratitude, relief, love]; 'biết là sự thật tàn nhẫn nhưng vẫn muốn biết rõ cho nhẹ lòng hơn :(' [relief, sadness, disappointment]."
+      }
+    }
+  },
+  {
+    "review_id": "seed_b93d0016a3e7c5df",
+    "term": "vỡ lẽ",
+    "changes": {
+      "decision": {
+        "previous": "needs_evidence",
+        "submitted": "accept"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Ví dụ tự soạn: 'Đến khi nghe giải thích thì mọi người mới vỡ lẽ nguyên do'. Chưa có trong 2 nguồn, giữ needs_evidence cho đến khi đối chiếu với corpus ViGoEmotions.",
+        "submitted": "Bổ sung câu từ tập train ViGoEmotions: 'bản thân em khi hỏi lúc nào cũng mặc định là cái điều đó quá hiển nhiên nên em làm theo cách mình luôn đến lúc vỡ lẽ lại thì là câu nói \"sao không biết mà không hỏi?\"' [remorse]. Sense cốt lõi là realization (nhận thức ra sự thật), trong câu này ngữ cảnh thực tế đi kèm sự ân hận (remorse)."
+      }
+    }
+  },
+  {
+    "review_id": "seed_9294ab38039f60d2",
+    "term": "lo",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "sense_gloss": {
+        "previous": "Bồn chồn không yên vì sợ điều chẳng lành (lo âu) hoặc để tâm chăm sóc (lo liệu, lo cho)",
+        "submitted": "Tâm trạng bất an, thấp thỏm sợ điều chẳng lành (lo âu) hoặc để tâm chăm sóc, chu tất cho người khác (lo liệu, lo cho)"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Từ đa nghĩa cao: (1) Cảm giác lo lắng, bồn chồn (nervousness: 'lo sốt vó'); (2) Chăm sóc, chu tất (caring: 'mẹ lo từng bữa ăn cho con'). Cần phân biệt rõ khi gán nhãn ngữ cảnh.",
+        "submitted": "Chốt gồm hai nét nghĩa cảm xúc chính: bất an/bồn chồn cá nhân (nervousness: 'lo sốt vó') và quan tâm chăm lo cho người khác (caring: 'mẹ lo cho con từng bữa ăn')."
+      }
+    }
+  },
+  {
+    "review_id": "seed_04a3c28e464c4895",
+    "term": "tiếc",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Có thể là remorse khi tự trách bản thân ('tiếc vì đã bỏ lỡ dịp học tập') hoặc disappointment khi sự việc khách quan không như ý ('thua trận đấu thật đáng tiếc'). Cần lưu ý khi tạo synset.",
+        "submitted": "Chốt gồm hai trường hợp: hối tiếc do tự trách bản thân vì bỏ lỡ cơ hội (remorse: 'tiếc vì đã không cố gắng') và buồn bã thất vọng do hoàn cảnh khách quan không như ý (disappointment: 'thua trận đấu thật đáng tiếc')."
+      }
+    }
+  },
+  {
+    "review_id": "seed_6f855e57e46b2cb4",
+    "term": "hụt hẫng",
+    "changes": {
+      "decision": {
+        "previous": "needs_evidence",
+        "submitted": "accept"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Ví dụ tự soạn: 'Khi dự án tâm huyết bị hủy bỏ, tôi thấy hụt hẫng vô cùng'. Chưa khớp chuỗi trong hai từ điển nguồn, giữ needs_evidence theo hướng dẫn rà soát.",
+        "submitted": "Kiểm tra toàn bộ ViGoEmotions (train/val/test: 20.664 câu): 0 lần xuất hiện (từ vựng OOV trong corpus). Chấp nhận làm seed chuẩn tiếng Việt cho nhãn disappointment dựa trên định nghĩa từ vựng rõ ràng; câu ngữ cảnh: 'Khi dự án tâm huyết bị hủy bỏ đột ngột, tôi thấy hụt hẫng vô cùng'."
+      }
+    }
+  },
+  {
+    "review_id": "seed_47143a1fccaa31d5",
+    "term": "ghét",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Từ đa diện: vừa có sắc thái khinh ghét/không ưa (disgust: 'ghét đồ bẩn thỉu'), vừa có sắc thái bực tức/căm ghét (anger: 'ghét cay ghét đắng kẻ phản bội').",
+        "submitted": "Chốt gồm hai sắc thái: khinh ghét, ghê tởm không ưa (disgust: 'ghét đồ dơ bẩn') và tức giận, căm ghét sâu sắc (anger: 'ghét cay ghét đắng kẻ phản bội')."
+      }
+    }
+  },
+  {
+    "review_id": "seed_5c4b7fca1c718462",
+    "term": "tức",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Từ đa nghĩa: có thể chỉ cảm giác thể chất (tức ngực, tức bụng) hoặc cảm xúc giận dỗi/bực bội. Chỉ lấy nghĩa cảm xúc ('tức mình vì bị vu oan').",
+        "submitted": "Chốt nghĩa cảm xúc giận dỗi, bực tức (Ví dụ: 'tức mình vì bị vu oan'). Loại bỏ hoàn toàn nghĩa sinh lý thể chất (tức ngực, tức bụng) và phó từ thời gian (tức khắc)."
+      }
+    }
+  },
+  {
+    "review_id": "seed_af27995c6c618eca",
+    "term": "khó chịu",
+    "changes": {
+      "decision": {
+        "previous": "revise",
+        "submitted": "accept"
+      },
+      "reviewed_emotions": {
+        "previous": "annoyance;disgust",
+        "submitted": "annoyance"
+      },
+      "sense_gloss": {
+        "previous": "Cảm giác không thoải mái, bực dọc về tinh thần hoặc ghê sợ, bất an",
+        "submitted": "Tâm trạng bực dọc, bức bối, không vừa lòng trước sự việc hoặc hành vi gây phiền toái"
+      },
+      "reviewed_at": {
+        "previous": "2026-11-20T09:10:00+07:00",
+        "submitted": "2026-11-20T09:30:00+07:00"
+      },
+      "notes": {
+        "previous": "Từ rất đa nghĩa: (1) Cảm giác sinh lý (đau ốm, khó ở); (2) Bực dọc tâm lý (annoyance: 'thái độ khó chịu'); (3) Ghê tởm mùi vị (disgust: 'mùi hắc khó chịu'). Giữ nghĩa tâm lý cho seed annoyance.",
+        "submitted": "Đồng bộ nhãn và ghi chú: Chốt giữ duy nhất nghĩa tâm lý bực dọc/phiền toái cho nhãn annoyance (Ví dụ: 'thái độ khó chịu', 'chờ đợi lâu rất khó chịu'); loại trừ nghĩa sinh lý thể chất (khó ở) và nghĩa giác quan (mùi khó chịu - thuộc disgust)."
+      }
+    }
+  }
+]

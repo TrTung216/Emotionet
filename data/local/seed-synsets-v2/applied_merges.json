@@ -1,0 +1,62 @@
+[
+  {
+    "target_synset_id": "syn_3d86b42296cd6c36",
+    "merged_lemmas": [
+      "yêu",
+      "thương"
+    ],
+    "merged_senses": [
+      "seed_3d506a76a545d23f_sense",
+      "seed_4be1e91ff9884ad8_s1"
+    ],
+    "notes": "Chấp nhận gộp: Cả hai lemma cùng biểu đạt nét nghĩa yêu mến, gắn bó sâu sắc (love) trong quan hệ gia đình/con người."
+  },
+  {
+    "target_synset_id": "syn_44b397ce0503a06f",
+    "merged_lemmas": [
+      "nhẹ nhõm",
+      "nhẹ lòng"
+    ],
+    "merged_senses": [
+      "seed_00d3b4f428aea31e_sense",
+      "seed_b1055622fff4943c_sense"
+    ],
+    "notes": "Chấp nhận gộp: Cùng biểu đạt trạng thái tâm lý thanh thản, khoan khoái khi trút bỏ được gánh nặng/lo âu (relief)."
+  },
+  {
+    "target_synset_id": "syn_ebc12cdc6ee516b9",
+    "merged_lemmas": [
+      "đồng tình",
+      "tán thành"
+    ],
+    "merged_senses": [
+      "seed_0402067f647d4629_sense",
+      "seed_26fbf6d958c5d88d_sense"
+    ],
+    "notes": "Chấp nhận gộp: Cùng biểu lộ sự nhất trí, ủng hộ quan điểm/chủ trương của người khác (approval)."
+  },
+  {
+    "target_synset_id": "syn_3d785a40877bae84",
+    "merged_lemmas": [
+      "nhận ra",
+      "vỡ lẽ"
+    ],
+    "merged_senses": [
+      "seed_820c81872416da35_sense",
+      "seed_b93d0016a3e7c5df_sense"
+    ],
+    "notes": "Chấp nhận gộp: Cùng biểu đạt sự bừng hiểu, ngộ ra chân tướng sự việc sau một thời gian (realization)."
+  },
+  {
+    "target_synset_id": "syn_13a9a091c39694b1",
+    "merged_lemmas": [
+      "lo",
+      "lo lắng"
+    ],
+    "merged_senses": [
+      "seed_9294ab38039f60d2_s1",
+      "seed_a193032b482ea6c0_sense"
+    ],
+    "notes": "Chấp nhận gộp: Cùng biểu thị tâm trạng bất an, bồn chồn trước điều chưa chắc chắn/rủi ro (nervousness). 'Lo' là dạng rút gọn của 'lo lắng'."
+  }
+]

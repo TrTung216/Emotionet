@@ -15,5 +15,4 @@ dist/
 .env.*
 !.env.example
 
-# Locally imported lexicons and derived review tables are not distributable assets.
-data/local/
+# Research snapshots in data/local are tracked with project-owner authorization.

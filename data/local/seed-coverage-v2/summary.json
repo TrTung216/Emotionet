@@ -1,0 +1,36 @@
+{
+  "train_rows": 16531,
+  "rows_with_any_seed": 3036,
+  "surface_coverage_fraction": 0.1836549513036114,
+  "seed_count": 66,
+  "seeds_seen_in_train": 60,
+  "seeds_not_seen_in_train": [
+    "phấn khích",
+    "cảm kích",
+    "sửng sốt",
+    "ngượng ngùng",
+    "hụt hẫng",
+    "không tán thành"
+  ],
+  "raw_occurrences": 4001,
+  "longest_occurrences": 3803,
+  "interpretation": "Surface coverage only, not precision, recall, sense verification or emotion prediction.",
+  "normalization": "NFC, casefold, collapse whitespace; Unicode word boundaries; no accent removal",
+  "selection": "leftmost-longest, non-overlapping; raw counts also retained",
+  "limitations": [
+    "No word sense disambiguation, negation, sarcasm or intensity handling.",
+    "Multi-label lexical entries do not imply all labels for every occurrence.",
+    "No match does not imply neutral.",
+    "Samples are first 3 selected rows per seed, not an unbiased evaluation set."
+  ],
+  "inputs": {
+    "seeds": {
+      "path": "D:\\Emotionet\\data\\local\\reviewed-seeds-v2\\accepted-seeds.jsonl",
+      "sha256": "13055df5a15f3b1a99ee5c13d106db88ba4c44ef9ae395d5c3f4dc507ef1f249"
+    },
+    "train": {
+      "path": "D:\\NCKH_GA+LSTM_Emotion_Recognition\\data_external\\ViGoEmotions\\train.csv",
+      "sha256": "9abcb2b7d9fadd9da043a3af43e8ee569f7099d87d20daf39a69e7e1a76c5624"
+    }
+  }
+}

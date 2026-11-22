@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "selected_version": "reviewed-seeds-v2",
+  "selected_seed_path": "data/local/reviewed-seeds-v2/accepted-seeds.jsonl",
+  "selected_review_path": "data/local/reviewed-seeds-v2/submitted-review.csv",
+  "selected_split_senses_path": "data/local/sense-match-review-v1/accepted-split-senses.jsonl",
+  "split_sense_status": "accepted_as_submitted",
+  "match_review_snapshot": "data/local/sense-match-review-v2/summary.json",
+  "match_review_quality_status": "resolved_as_submitted",
+  "context_resolution_path": "data/local/quality-resolution-v1/resolved-contexts.jsonl",
+  "context_resolution_does_not_certify_gold_sense_labels": true,
+  "decision_date": "2026-11-20",
+  "decision_authority": "project_owner_instruction",
+  "user_instruction": "giữ bản của tôi",
+  "seed_count": 66,
+  "team_reviews_role": "reference_only",
+  "team_adjudication_required": false,
+  "selection_does_not_change_original_reviewers_or_evidence": true
+}

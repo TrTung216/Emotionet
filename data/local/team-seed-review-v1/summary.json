@@ -1,0 +1,72 @@
+{
+  "rows": 66,
+  "comparison_status_counts": {
+    "aligned_accept": 45,
+    "needs_adjudication": 20,
+    "joint_label_change": 1
+  },
+  "decision_agreement_count": 51,
+  "label_set_agreement_count": 56,
+  "decision_and_label_agreement_count": 48,
+  "gloss_text_identical_count": 0,
+  "interpretation": [
+    "Agreement compares decision strings and unordered label sets, not semantic equivalence of glosses.",
+    "Reviewer independence is not established; baseline is a prior version, not a third independent vote.",
+    "No majority vote, label union, source changes or automatic acceptance is performed."
+  ],
+  "review_metadata": {
+    "review_a": {
+      "reviewers": [
+        "Phan Giang Tâm"
+      ],
+      "decisions": {
+        "accept": 53,
+        "reject": 1,
+        "needs_evidence": 12
+      },
+      "missing_reviewed_at_count": 66
+    },
+    "review_b": {
+      "reviewers": [
+        "Hoàng"
+      ],
+      "decisions": {
+        "accept": 50,
+        "revise": 12,
+        "needs_evidence": 4
+      },
+      "missing_reviewed_at_count": 66
+    }
+  },
+  "inputs": {
+    "review_a": {
+      "path": "C:\\Users\\ADMIN\\Downloads\\seed-review(tam).csv",
+      "sha256": "81daa59d3278117b247d5614f8a712c87e555e2612e14f3cf24931e2818fea50"
+    },
+    "review_b": {
+      "path": "C:\\Users\\ADMIN\\Downloads\\seed-rw(Hoang).csv",
+      "sha256": "6c4bdeb247c5fb0f71f5b693fd13347af8001123ff1990ce65bc6a8b969df371"
+    },
+    "baseline": {
+      "path": "D:\\Emotionet\\data\\local\\reviewed-seeds-v2\\submitted-review.csv",
+      "sha256": "9d144ceebb923f65a8a524a0b23aaa96a660e0a206c4cf3fe8aa66ac8fa86923"
+    },
+    "template": {
+      "path": "D:\\Emotionet\\data\\local\\seed-review-v1\\seed-review.csv",
+      "sha256": "479a59d4ef8dc5023f614e9fa0b306696bc8198e71bb3ab757f786252283e28b"
+    },
+    "taxonomy": {
+      "path": "D:\\Emotionet\\configs\\vigoemotions-labels.json",
+      "sha256": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b"
+    }
+  },
+  "output_sha256": {
+    "adjudication-queue.csv": "fceef7e12289e578009cb31eff54815b0cab1484d2244e0335af5b50763d2cc7",
+    "baseline.csv": "9d144ceebb923f65a8a524a0b23aaa96a660e0a206c4cf3fe8aa66ac8fa86923",
+    "comparison.csv": "79858d49ff10ce1229864a1060ccdf71604bc0f2c73619eb0b058344fe45e107",
+    "review_a.csv": "81daa59d3278117b247d5614f8a712c87e555e2612e14f3cf24931e2818fea50",
+    "review_b.csv": "6c4bdeb247c5fb0f71f5b693fd13347af8001123ff1990ce65bc6a8b969df371",
+    "taxonomy.json": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b",
+    "template.csv": "479a59d4ef8dc5023f614e9fa0b306696bc8198e71bb3ab757f786252283e28b"
+  }
+}

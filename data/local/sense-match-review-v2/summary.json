@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "imported_at": "2026-11-20T16:06:50.362810+00:00",
+  "accepted_split_senses": 10,
+  "split_terms": 5,
+  "sample_pairs": 155,
+  "distinct_train_sentences": 148,
+  "submitted_sample_decisions": {
+    "matches_sense": 143,
+    "wrong_sense": 8,
+    "uncertain": 4
+  },
+  "submitted_match_fraction": 0.9225806451612903,
+  "source_identity_validation": "all sample pairs, texts and metadata match regenerated train samples",
+  "semantic_validation": "not_adjudicated; review notes and decisions may require correction",
+  "review_metadata": "Sense reviewer retained; sense review dates and sample reviewer/date unspecified, not inferred.",
+  "limitations": [
+    "155 sampled seed-sentence pairs are not necessarily 155 distinct sentences.",
+    "First-three-per-seed samples do not establish overall precision or accuracy.",
+    "Separate lexical meaning from negation, intensity scope, speaker attribution and mentions.",
+    "Splitting senses does not perform contextual word sense disambiguation."
+  ],
+  "inputs": {
+    "sense_review": {
+      "path": "D:\\Emotionet\\data\\local\\seed-analysis-v2\\sense-split-review.csv",
+      "sha256": "5788a8dbe072ed85207b22d181d64a294b0298337794153c6b6a87e7a1da0612"
+    },
+    "match_review": {
+      "path": "D:\\Emotionet\\data\\local\\seed-coverage-v2\\match-review-samples.csv",
+      "sha256": "52ed87d9825b272e6dc9a887b02e495e40723ef9da2e4bdffa0b7776eb678d6a"
+    },
+    "seeds": {
+      "path": "D:\\Emotionet\\data\\local\\reviewed-seeds-v2\\accepted-seeds.jsonl",
+      "sha256": "13055df5a15f3b1a99ee5c13d106db88ba4c44ef9ae395d5c3f4dc507ef1f249"
+    },
+    "train": {
+      "path": "D:\\NCKH_GA+LSTM_Emotion_Recognition\\data_external\\ViGoEmotions\\train.csv",
+      "sha256": "9abcb2b7d9fadd9da043a3af43e8ee569f7099d87d20daf39a69e7e1a76c5624"
+    },
+    "user_submission": {
+      "path": "data\\local\\quality-resolution-v1\\submitted_quality_queue.csv",
+      "sha256": "57a8551e5e102ac363988273ac2cfb6af252f5651c500458ac06709427952b74"
+    }
+  },
+  "output_sha256": {
+    "accepted-split-senses.jsonl": "a0c7c109dfab2e0feffe5e8a6732b8266c3b875d84b757701aa551644a299047",
+    "match-review-events.jsonl": "c3c68190902524cac26620e3ca708e8b3f000cda989adce53987342ed5db8aaa",
+    "match_review.csv": "52ed87d9825b272e6dc9a887b02e495e40723ef9da2e4bdffa0b7776eb678d6a",
+    "seeds.jsonl": "13055df5a15f3b1a99ee5c13d106db88ba4c44ef9ae395d5c3f4dc507ef1f249",
+    "sense-review-events.jsonl": "e813176ec11b7843a32ee6dc64f5d373586446658e23a31ed1cbd86c59dbc7ae",
+    "sense_review.csv": "5788a8dbe072ed85207b22d181d64a294b0298337794153c6b6a87e7a1da0612",
+    "user_submission.csv": "57a8551e5e102ac363988273ac2cfb6af252f5651c500458ac06709427952b74"
+  }
+}

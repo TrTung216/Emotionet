@@ -1,0 +1,2 @@
+# Preserve exact snapshot bytes and manifest checksums on all platforms.
+data/local/** -text

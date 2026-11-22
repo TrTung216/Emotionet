@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "imported_at": "2026-11-20T02:27:04.590851+00:00",
+  "reviewed_rows": 66,
+  "decisions": {
+    "accept": 55,
+    "revise": 7,
+    "reject": 0,
+    "needs_evidence": 4
+  },
+  "accepted_seed_count": 55,
+  "accepted_label_counts": {
+    "admiration": 2,
+    "amusement": 2,
+    "anger": 3,
+    "annoyance": 2,
+    "approval": 2,
+    "caring": 2,
+    "confusion": 2,
+    "curiosity": 2,
+    "desire": 2,
+    "disappointment": 2,
+    "disapproval": 2,
+    "disgust": 2,
+    "embarrassment": 2,
+    "excitement": 2,
+    "fear": 5,
+    "gratitude": 2,
+    "grief": 2,
+    "joy": 4,
+    "love": 2,
+    "nervousness": 2,
+    "optimism": 2,
+    "pride": 2,
+    "realization": 1,
+    "relief": 1,
+    "remorse": 2,
+    "sadness": 4,
+    "surprise": 2
+  },
+  "labels_without_accepted_seeds": [],
+  "publication_status": "not_cleared",
+  "synsets_created": 0,
+  "inputs": {
+    "review": {
+      "filename": "seed-review-completed.csv",
+      "sha256": "bc1f0f80a7c7f5f968541b54f87145c4bce152e7d965965d02c4bf716c5b390f"
+    },
+    "template": {
+      "filename": "seed-review.csv",
+      "sha256": "0d95ccb3ac2c5d2f0952642b957d7931cb955fed87121ebc840653e1d85e147e"
+    },
+    "evidence": {
+      "filename": "review-evidence.jsonl",
+      "sha256": "0cf5dac82fd9dd752989a7179eaa81ad2744bcdbd42a540e4093e2b9a50d5ac4"
+    },
+    "taxonomy": {
+      "filename": "vigoemotions-labels.json",
+      "sha256": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b"
+    },
+    "source_summary": {
+      "filename": "summary.json",
+      "sha256": "5f2ec9017a0ad1b53fb41d5592b9fb811de6a601e4e05ddb7375d0d0b174ca23"
+    }
+  },
+  "original_source_files": {
+    "nrc": {
+      "filename": "NRC-Emotion-Lexicon.zip",
+      "sha256": "4edcbd00b1d38ace19ecebca17a50ce08719785b9476cd12d31532eff0fc34e6",
+      "bytes": 25878449
+    },
+    "vnemolex": {
+      "filename": "VnEmoLex.xlsx",
+      "sha256": "48325a5bbcd6d154f5c5c4cbf8be8f4890f2ee288635e5b6114d43eb7ff3d78a",
+      "bytes": 640696
+    }
+  },
+  "output_sha256": {
+    "accepted-seeds.jsonl": "58f1011c53f0f9afdf4b455eac12774be8dc0186c6264c949696c12810e64968",
+    "original-template.csv": "0d95ccb3ac2c5d2f0952642b957d7931cb955fed87121ebc840653e1d85e147e",
+    "pending-review.csv": "6c377c98215a3b262f84187d3d1eb45557ec1df96e2889b2982f95d7b14c1cdc",
+    "rejected-review.csv": "c2ab78e2ebbee8125883994b68143c08dd549d3ed183a918881322a22d7ec3fc",
+    "review-events.jsonl": "cd84dfa4fd09672f02b5eaf77ef6af43f18e45215ff7f22dd77ddf296a5d0ccd",
+    "review-evidence.jsonl": "0cf5dac82fd9dd752989a7179eaa81ad2744bcdbd42a540e4093e2b9a50d5ac4",
+    "source-summary.json": "5f2ec9017a0ad1b53fb41d5592b9fb811de6a601e4e05ddb7375d0d0b174ca23",
+    "submitted-review.csv": "bc1f0f80a7c7f5f968541b54f87145c4bce152e7d965965d02c4bf716c5b390f",
+    "taxonomy.json": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b"
+  }
+}

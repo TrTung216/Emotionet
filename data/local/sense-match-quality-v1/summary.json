@@ -1,0 +1,12 @@
+{
+  "source_snapshot": "../sense-match-review-v1/summary.json",
+  "source_snapshot_sha256": "87f4ccbb053e7b85a5dede2b3f467d01a248d2b4999248c60b99ae66bed3745c",
+  "clear_annotation_consistency_issues": 2,
+  "additional_semantic_checks": 4,
+  "prose_id_corrections": 4,
+  "existing_decisions_changed": false,
+  "output_sha256": {
+    "quality-review-queue.csv": "34db517d1cf3a0dd9d8e92c744f405cf36eecfd98c270b127d97edc46f1a8420",
+    "summary-id-corrections.csv": "bb5129e9b31570c0c6e6f0ef73082dc1df563b357a9d2c28a8b876713a802d14"
+  }
+}

@@ -30,6 +30,10 @@ Xem [bộ synset và kết quả mở rộng](docs/g0/synsets-and-expansion.md).
 
 ## Tài liệu
 
+- Cập nhật 22/11/2026: chủ dự án xác nhận được phép chia sẻ và yêu cầu đưa
+  `data/local/` lên Git bằng cách thông thường. Repo nay bao gồm review, snapshot
+  synset và vector Word2Vec. Các ghi chú cũ về việc loại thư mục này khỏi Git
+  mô tả trạng thái trước cập nhật; metadata lịch sử trong snapshot được giữ nguyên.
 - [Báo cáo tiến độ và timeline đến 07/02/2027 (cập nhật 21/11/2026)](docs/reports/bao-cao-tien-do-va-timeline-2026-11-21.md)
 - [Synset khởi đầu và mở rộng bằng embedding](docs/g0/synsets-and-expansion.md)
 - [Chọn seed từ NRC và VnEmoLex đã tải](docs/g0/seed-source-review.md)

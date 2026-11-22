@@ -1,0 +1,67 @@
+﻿seed_id,term,reviewed_emotions,raw_matching_rows,raw_occurrences,longest_matching_rows,longest_occurrences
+seed_9e83ca9df03a047b,buồn cười,amusement,25,25,25,25
+seed_05f1e103208aa35d,hài hước,amusement,14,14,14,14
+seed_3c06e5b7810379c7,thích thú,amusement;joy,3,3,3,3
+seed_b877d414cc7c207c,hào hứng,excitement,2,2,2,2
+seed_b04046873f80b309,phấn khích,excitement,0,0,0,0
+seed_f37e5f8debaf8f49,vui,joy,257,274,254,271
+seed_118134ebdc1c09b4,vui mừng,joy,3,3,3,3
+seed_07a829a54dfd775a,hạnh phúc,joy,116,122,116,122
+seed_3d506a76a545d23f,yêu,love,527,595,486,545
+seed_1920201a3c0ce478,yêu thương,love;caring,46,50,46,50
+seed_4be1e91ff9884ad8,thương,caring;love,481,514,436,461
+seed_be0465fe78d6eecd,mong muốn,desire,11,11,11,11
+seed_255de78f56dbe1e0,khao khát,desire,2,2,2,2
+seed_1ccc365bbe73cc7f,lạc quan,optimism,22,23,22,23
+seed_b99b4006bf5ef0cf,hy vọng,optimism,34,34,34,34
+seed_dbc25d63f85449db,quan tâm,caring,65,65,65,65
+seed_39ef2d16ef7104c0,lo lắng cho,caring;nervousness,1,1,1,1
+seed_cbab0ab501177d02,tự hào,pride,227,234,227,234
+seed_360013ba2e91be9a,hãnh diện,pride,1,1,1,1
+seed_a2ed65e2ef24de82,ngưỡng mộ,admiration,24,25,24,25
+seed_fc28d941afe4083d,khâm phục,admiration,11,12,11,12
+seed_cb9c41dc495a5f14,biết ơn,gratitude,23,23,23,23
+seed_0f478cb877acde4b,cảm kích,gratitude,0,0,0,0
+seed_00d3b4f428aea31e,nhẹ nhõm,relief,5,5,5,5
+seed_b1055622fff4943c,nhẹ lòng,relief,3,3,3,3
+seed_0402067f647d4629,đồng tình,approval,2,2,2,2
+seed_26fbf6d958c5d88d,tán thành,approval,1,1,1,1
+seed_820c81872416da35,nhận ra,realization,75,76,75,76
+seed_b93d0016a3e7c5df,vỡ lẽ,realization,1,1,1,1
+seed_e11c60d8fb217448,ngạc nhiên,surprise,2,2,2,2
+seed_7989177de4535e83,sửng sốt,surprise,0,0,0,0
+seed_2ef10519e4c4e93f,tò mò,curiosity,3,3,3,3
+seed_f057ae4383781a08,hiếu kỳ,curiosity,1,1,1,1
+seed_76a0a10b16e365b8,bối rối,confusion,3,3,3,3
+seed_1aab9d75143dba70,hoang mang,confusion;fear,10,10,10,10
+seed_504f6708d169a837,sợ,fear,508,592,494,574
+seed_361954d5325dd4ef,sợ hãi,fear,16,16,16,16
+seed_733a7dc5ab3aaad2,khiếp sợ,fear,1,1,1,1
+seed_9294ab38039f60d2,lo,caring;nervousness,139,156,112,121
+seed_a193032b482ea6c0,lo lắng,nervousness,32,35,31,34
+seed_27acb888051981aa,bồn chồn,nervousness,1,1,1,1
+seed_354959db57136431,hối hận,remorse,272,304,272,304
+seed_0580ecac997fb154,ăn năn,remorse,1,1,1,1
+seed_04a3c28e464c4895,tiếc,disappointment;remorse,98,103,98,103
+seed_54b2d9ce53154c61,xấu hổ,embarrassment,16,20,16,20
+seed_f98e32ab6772d6c2,ngượng ngùng,embarrassment,0,0,0,0
+seed_2dc32d4056e71e4e,thất vọng,disappointment,26,28,26,28
+seed_6f855e57e46b2cb4,hụt hẫng,disappointment,0,0,0,0
+seed_b2e29f0a98611bee,nản,disappointment,19,19,19,19
+seed_a474e7e0e4e0def0,buồn,sadness,310,343,280,313
+seed_34dab7a5eb9a106b,buồn bã,sadness,2,2,2,2
+seed_3920e0e5046b2026,sầu,sadness,5,5,5,5
+seed_d0b204d20122300a,đau buồn,grief;sadness,3,3,3,3
+seed_21c73ca335ae3582,đau thương,grief,3,3,3,3
+seed_f400f274caf40f89,ghê tởm,disgust,3,3,3,3
+seed_2b64d163a80acce0,ghê sợ,disgust;fear,1,1,1,1
+seed_47143a1fccaa31d5,ghét,anger;disgust,75,80,75,80
+seed_0cfc9f954175072c,giận,anger,50,55,46,51
+seed_5c4b7fca1c718462,tức,anger;annoyance,50,51,46,47
+seed_aff0d1f1f2cce70a,tức giận,anger,4,4,4,4
+seed_e308352b286176bf,phẫn nộ,anger,6,6,6,6
+seed_0ce02e21cfd34784,bực mình,annoyance,5,5,5,5
+seed_eef2dcd8bb32f7fc,bực bội,annoyance,1,1,1,1
+seed_af27995c6c618eca,khó chịu,annoyance,19,19,19,19
+seed_be52ead6ca089e8d,phản đối,disapproval,4,4,4,4
+seed_d05958692ab28e84,không tán thành,disapproval,0,0,0,0

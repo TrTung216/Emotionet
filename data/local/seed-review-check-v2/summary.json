@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "review_csv_valid": true,
+  "rows": 66,
+  "decisions": {
+    "accept": 66
+  },
+  "changed_rows": 11,
+  "unchanged_rows": 55,
+  "train_rows": 16531,
+  "checked_splits": [
+    "train"
+  ],
+  "other_split_scan_claim_in_notes": "not_reverified; do not use validation/test to select seeds",
+  "previously_missing_evidence": [
+    {
+      "review_id": "seed_39ef2d16ef7104c0",
+      "term": "lo lắng cho",
+      "exact_train_matches": 1,
+      "dataset_ids": [
+        "you001771"
+      ],
+      "evidence_type": "corpus_occurrence"
+    },
+    {
+      "review_id": "seed_b1055622fff4943c",
+      "term": "nhẹ lòng",
+      "exact_train_matches": 3,
+      "dataset_ids": [
+        "3276",
+        "you001630",
+        "you002139"
+      ],
+      "evidence_type": "corpus_occurrence"
+    },
+    {
+      "review_id": "seed_b93d0016a3e7c5df",
+      "term": "vỡ lẽ",
+      "exact_train_matches": 1,
+      "dataset_ids": [
+        "you003294"
+      ],
+      "evidence_type": "corpus_occurrence"
+    },
+    {
+      "review_id": "seed_6f855e57e46b2cb4",
+      "term": "hụt hẫng",
+      "exact_train_matches": 0,
+      "dataset_ids": [],
+      "evidence_type": "reviewer_definition_and_authored_example_only"
+    }
+  ],
+  "related_form_lo_cho_count": 17,
+  "inputs": {
+    "submitted": {
+      "path": "C:\\Users\\ADMIN\\.codex\\attachments\\aef567b1-e637-4f8d-add7-e5c6ff5644ef\\Pasted text.txt",
+      "sha256": "9d144ceebb923f65a8a524a0b23aaa96a660e0a206c4cf3fe8aa66ac8fa86923"
+    },
+    "previous": {
+      "path": "data\\local\\reviewed-seeds-v1\\submitted-review.csv",
+      "sha256": "bc1f0f80a7c7f5f968541b54f87145c4bce152e7d965965d02c4bf716c5b390f"
+    },
+    "train": {
+      "path": "D:\\NCKH_GA+LSTM_Emotion_Recognition\\data_external\\ViGoEmotions\\train.csv",
+      "sha256": "9abcb2b7d9fadd9da043a3af43e8ee569f7099d87d20daf39a69e7e1a76c5624"
+    }
+  },
+  "interpretation": [
+    "All 66 accept decisions are submitted review decisions, not 66 independently corpus-validated senses.",
+    "Seven revised terms have explicit scope notes; multiple alternative senses still need separate sense IDs when building synsets.",
+    "No existing accepted seed snapshot or review CSV was changed."
+  ],
+  "output_sha256": {
+    "review-diff.json": "195da431acbfe9ebf285120f9fe3ef819958f20bbdb5dda3b4b95829c232b000",
+    "submitted-review.csv": "9d144ceebb923f65a8a524a0b23aaa96a660e0a206c4cf3fe8aa66ac8fa86923",
+    "verified-train-evidence.jsonl": "699ac494896f821c1e9c0458bb61c45ba3faccdb0e99b86e7e366ea24667d916"
+  }
+}

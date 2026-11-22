@@ -1,0 +1,21 @@
+{
+  "seed_snapshot": "../reviewed-seeds-v2/summary.json",
+  "seed_snapshot_sha256": "6fe252ecb906e915e38e20c4f60a4907c841c68862e36b03d0bbf4ea4a0652a5",
+  "previous_snapshot": "../reviewed-seeds-v1/summary.json",
+  "previous_snapshot_sha256": "6074e62ec0bdb1eb1636190f99f64d1fb0ef0e02a294549f9ed7c3e56b33951e",
+  "review_diff": "../seed-review-check-v2/review-diff.json",
+  "evidence_verification": "../seed-review-check-v2/summary.json",
+  "coverage_audit": "../seed-coverage-v2/summary.json",
+  "seed_count": 66,
+  "profiles_by_basis": {
+    "lexicon_observations": 62,
+    "corpus_occurrences": 3,
+    "authored_example": 1
+  },
+  "output_sha256": {
+    "evidence-profiles.jsonl": "d07ac3491ccca2cec031b9dafbae768a2aa899db906927c6ea072a7e9a3d5f7c",
+    "sense-split-review.csv": "937ca3c1b56e6443ca0562da754e0f5b5387d59640b8f9e4d283f1a760991fde",
+    "verified-train-evidence.jsonl": "699ac494896f821c1e9c0458bb61c45ba3faccdb0e99b86e7e366ea24667d916"
+  },
+  "previous_snapshot_integrity_note": "v1 pending-review.csv differs from its original manifest; left untouched. v2 inputs use verified attachment and original template."
+}

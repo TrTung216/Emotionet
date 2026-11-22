@@ -1,0 +1,37 @@
+{
+  "schema": "emotionet_research_seed_synsets_v1",
+  "data_version": "seed-synsets-v1",
+  "entries": 66,
+  "senses": 71,
+  "synsets": 71,
+  "cross_lemma_merges_applied": 0,
+  "merge_proposals": 5,
+  "emotion_label_count": 27,
+  "publication_status": "not_cleared",
+  "pos_policy": "unknown; no invented POS labels",
+  "inputs": {
+    "seed_source": {
+      "path": "D:\\Emotionet\\data\\local\\reviewed-seeds-v2\\accepted-seeds.jsonl",
+      "sha256": "13055df5a15f3b1a99ee5c13d106db88ba4c44ef9ae395d5c3f4dc507ef1f249"
+    },
+    "split_source": {
+      "path": "D:\\Emotionet\\data\\local\\sense-match-review-v1\\accepted-split-senses.jsonl",
+      "sha256": "b6e8064f8c412cbc4a85e6ed923ef61f9db70800cba499586788fce7e4eaddd6"
+    },
+    "context_source": {
+      "path": "D:\\Emotionet\\data\\local\\quality-resolution-v1\\resolved-contexts.jsonl",
+      "sha256": "009db65a9aa9035a62e67e7cacbd5d2f4f06e8fe4f68b739c91ad840cd578c6f"
+    }
+  },
+  "output_sha256": {
+    "context_source.jsonl": "009db65a9aa9035a62e67e7cacbd5d2f4f06e8fe4f68b739c91ad840cd578c6f",
+    "entries.jsonl": "8eba8846b536686abdc8f426b4d91ad1800e2a38e0897f56bc8b6bb7775756a0",
+    "evidence.jsonl": "a25dddfc75225ed9af3459005a0aa0040c9d882af88863ebb78eb32d6ddd9e2b",
+    "merge-proposals.csv": "ab723d88c2f862bfd5d86e806323d7eadc81d72626c3231a050a91e1e4be6c25",
+    "seed_source.jsonl": "13055df5a15f3b1a99ee5c13d106db88ba4c44ef9ae395d5c3f4dc507ef1f249",
+    "selection-source.json": "f0f2aa58f37cd600fadafa7c144c58af2ae0167b71374f24b09dba453fe05e7c",
+    "senses.jsonl": "92040e2402224f284c0f6201ca7c5bd8c515e6196d45a6a3f91ed4a3dfa7e892",
+    "split_source.jsonl": "b6e8064f8c412cbc4a85e6ed923ef61f9db70800cba499586788fce7e4eaddd6",
+    "synsets.jsonl": "ffb79bfb2704e8e07a43a7686a8a402e78801f29168c174f64e63f9f96b78eda"
+  }
+}

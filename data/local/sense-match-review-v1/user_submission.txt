@@ -1,0 +1,63 @@
+Phần 1: Chốt nghĩa 10 dòng đề xuất trong sense-split-review.csv
+
+Cả 10 sense split đề xuất cho 5 biểu thức đa nghĩa đều đạt tiêu chuẩn phân định nghĩa (1 sense 
+↔
+↔ 1 nhãn ViGoEmotions hạt nhân), giúp loại trừ hoàn toàn việc gán nhãn nhập nhằng trước khi tạo synset. Toàn bộ đã được điền decision = accept, reviewer = antigravity:
+
+Biểu thức	Draft Sense ID	Nhãn đề xuất	Định nghĩa nghĩa hạt nhân (sense_gloss)	Ví dụ ngữ cảnh	Quyết định & Ghi chú (notes)
+thương	..._s1	love	Tình cảm yêu mến và gắn bó sâu sắc	yêu thương gia đình	accept: Giữ cho tình cảm yêu thương ruột thịt/gắn bó; tách hoàn toàn khỏi caring.
+thương	..._s2	caring	Xót thương và quan tâm muốn chở che người khác	thương em vất vả	accept: Biểu đạt lòng trắc ẩn, xót xa trước nghịch cảnh, thôi thúc giúp đỡ.
+lo	..._s1	nervousness	Bất an và bồn chồn trước điều chưa chắc chắn hoặc điều chẳng lành	lo sốt vó	accept: Tâm trạng bất an nội tâm trước rủi ro/nguy cơ; phân biệt với lo toan.
+lo	..._s2	caring	Quan tâm chăm sóc và chu tất cho người khác	mẹ lo cho con từng bữa ăn	accept: Hành vi/tình cảm chăm lo, gánh vác trách nhiệm đối với người thân.
+tiếc	..._s1	remorse	Hối tiếc gắn với tự trách về lựa chọn hoặc hành động của bản thân	tiếc vì đã không cố gắng	accept: Day dứt nội tại do tự nhận thức lỗi lầm hoặc bỏ lỡ cơ hội của bản thân.
+tiếc	..._s2	disappointment	Thất vọng trước kết quả không như mong đợi	thua trận đấu thật đáng tiếc	accept: Thất vọng, tiếc nuối do hoàn cảnh khách quan bên ngoài mang lại.
+ghét	..._s1	disgust	Khinh ghét hoặc ghê tởm trước đối tượng	ghét đồ dơ bẩn	accept: Ác cảm, không ưa hoặc ghê tởm đối tượng/thói quen dơ bẩn, xấu xí.
+ghét	..._s2	anger	Tức giận và căm ghét mạnh đối với đối tượng	ghét cay ghét đắng kẻ phản bội	accept: Căm giận, thù ghét dồn nén trước hành vi bất nhân hoặc kẻ phản bội.
+lo lắng cho	..._s1	nervousness	Bất an trước tương lai hoặc tình huống có thể xảy ra	lo lắng cho tương lai	accept: Bất an hướng tới đối tượng trừu tượng/tương lai (khớp câu train you001771).
+lo lắng cho	..._s2	caring	Quan tâm và bận lòng vì an nguy của người khác	mẹ lo lắng cho con	accept: Quan tâm, chăm lo hướng tới an nguy của con người/người thân.
+Phần 2: Đánh dấu ngữ cảnh 155 câu mẫu trong match-review-samples.csv
+
+Đã rà soát toàn bộ 155 mẫu và ghi nhận quyết định kèm lý do vào từng dòng. Phân bố kết quả:
+
+matches_sense: 144 câu (92.9%)
+wrong_sense: 7 câu (4.5%)
+uncertain: 4 câu (2.6%)
+1. Chi tiết 4 từ ưu tiên (lo, thương, tức, ghét)
+Thuật ngữ	Dataset ID	Ngữ cảnh câu từ tập train	Đánh dấu	Phân tích ngữ nghĩa
+lo	1039	"mink chỉ lo là nhà nước không đủ gạo nuôi mấy anh"	matches_sense	Khớp s1 (nervousness): cảm giác lo ngại, bất an (văn phong mỉa mai nhẹ).
+lo	tik012404	"Hối hận thực sự khi ngoài kia... còn mình thì phải lo cho ck cho con gia đình ck..."	matches_sense	Khớp s2 (caring): gánh vác, chăm lo việc nhà và người thân.
+lo	5322	"công ăn việc làm còn chưa ổn định , bố mẹ già còn chưa lo được thì kết hôn để làm gì 😪"	matches_sense	Khớp s2 (caring): lo toan, phụng dưỡng bố mẹ già.
+thương	27659	"Yến Ngọc đọc thấy thương. Nhưng mà mình thích kiểu bị người yêu hiếp... haha"	uncertain	Dùng cụm "thấy thương" nhưng vế sau cợt nhả ("haha"), pha trộn trêu đùa bỡn cợt.
+thương	tik005170	"thay thương hai vk ck chỉ woa.e kho chu e mà có tiền nhiều là e giúp a chi tiền..."	matches_sense	Khớp s2 (caring): xót thương hoàn cảnh ngặt nghèo và mong muốn giúp đỡ.
+thương	26302	"Linh Linh Thấy bị đâm hai lần c ah... Thương quá"	matches_sense	Khớp s2 (caring): cảm thương, xót xa trước nạn nhân bị bạo lực.
+tức	red000001	"...Mình nghe ko sốc nhưng mà buồn vs bất lực thực sự. Mình tức mà mấy ngày liền k làm đc việc j cả..."	matches_sense	Khớp nghĩa tức tối, giận dữ dồn nén (anger;annoyance) vì bất công.
+tức	12552	"Thuận đóng đạt thật.làm ng xem thấy tức và ghét ghê"	matches_sense	Khớp nghĩa bực tức, căm ghét (anger;annoyance) trước nhân vật phản diện.
+tức	25713	"...Nhưng đi phóng nhanh vướt ẩu trêu ngươi e nghĩ cũng tức quá mất khôn thôi"	matches_sense	Khớp nghĩa giận dỗi bộc phát (anger: "tức quá mất khôn").
+ghét	3531	"per ghét ghê bây"	matches_sense	Khớp nghĩa bực bội, khó chịu, ghét bỏ (annoyance;disgust).
+ghét	20431	"Team trà sữa ko trân châu... Đời t ghét nhất ăn trân châu nhưng add on phô mai viên thì ăn😋"	matches_sense	Khớp s1 (disgust): ác cảm/không thích một loại thực phẩm.
+ghét	tik012211	"quá hối hận 😢 và ghét bản thân mình 😢"	matches_sense	Khớp s2 (anger/disgust): dằn vặt, căm ghét bản thân khi hối hận.
+2. Các trường hợp ngoại lệ quan trọng được lọc ra (wrong_sense & uncertain)
+sầu (ID 5168): "per ở quê ve sầu kêu chưa chúng mày" 
+→
+→ wrong_sense (danh từ chỉ côn trùng "ve sầu" - cicada, không phải cảm xúc sầu muộn).
+đồng tình (ID tik000067): "Kỳ Đồng tình cảm thế,:)" 
+→
+→ wrong_sense (lỗi tách từ xuyên ranh giới: "Kỳ Đồng" là tên riêng ghép với từ "tình cảm").
+phẫn nộ (ID 16554 & 3475): "tao sẽ lấy hết tất cả các nick clone tao có phẫn nộ cái vid này", "những người thả phẫn nộ..." 
+→
+→ wrong_sense (hành vi bấm nút reaction emoji trên mạng xã hội, không phải cảm xúc phẫn nộ thực tế).
+yêu thương (ID 12524): "Giống như trường hợp bộ phim Hãy nói lời yêu thương..." 
+→
+→ wrong_sense (nằm trong tên tác phẩm phim).
+nhận ra (ID 28036): "Lập blog này ra đừng ai nhận ra toi . chuẩn..." 
+→
+→ wrong_sense (nhận diện danh tính/khuôn mặt người quen, không phải realization bừng hiểu chân lý).
+buồn (ID 1004): "...tao thấy đéo đến mức buồn quá" 
+→
+→ wrong_sense (phủ định hoàn toàn cảm xúc buồn).
+tự hào (ID 32915): "Khanh Nguyen ủa tự hào vn ??? Hỏi chấm???😎" 
+→
+→ uncertain (câu hỏi tu từ mang tính châm biếm/nghi vấn).
+thất vọng (ID 2598): "bạn trai người khác không bao giờ làm tao thất vọng =)))))" 
+→
+→ uncertain (meme mạng xã hội nửa đùa nửa thật).
