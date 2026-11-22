@@ -1,0 +1,5 @@
+# Versions used for the local train-only embedding pilot.
+gensim==4.4.0
+numpy==2.4.3
+scipy==1.17.1
+pyvi==0.1.1

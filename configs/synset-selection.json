@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "selected_synset_version": "seed-synsets-v1",
+  "selected_synsets_path": "data/local/seed-synsets-v1/synsets.jsonl",
+  "selected_senses_path": "data/local/seed-synsets-v1/senses.jsonl",
+  "synset_manifest_path": "data/local/seed-synsets-v1/manifest.json",
+  "membership_policy": "singleton_from_reviewed_meaning; cross-lemma merges require explicit review",
+  "merge_proposals_path": "data/local/seed-synsets-v1/merge-proposals.csv",
+  "expansion_manifest_path": "data/local/embedding-expansion-v1/manifest.json",
+  "candidate_review_path": "data/local/embedding-expansion-v1/candidate-review.csv",
+  "candidate_membership_policy": "review_only; never automatic admission",
+  "source_seed_selection": "configs/seed-selection.json"
+}

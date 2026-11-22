@@ -1,0 +1,4 @@
+source_id,title,url,license,allowed_uses,retrieved_at,rights_status,notes
+src_g0_draft,Bản nháp mẫu G0 có AI hỗ trợ,,undetermined,,,pending,Chưa xác minh độc lập; chờ chủ dự án quyết định quyền phân phối
+src_nrc_emolex_vi_2022,NRC EmoLex Vietnamese translation August 2022,https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm,custom_noncommercial_no_redistribution,noncommercial_research;education,,pending,README trong ZIP mục IX cho nghiên cứu phi thương mại và cấm tái phân phối; chỉ xử lý local; ngày tải không được xác nhận
+src_vnemolex_local,VnEmoLex workbook supplied locally,https://zenodo.org/records/801610,undetermined,,,pending,Workbook local chưa kèm điều kiện sử dụng rõ ràng; hash lưu trong báo cáo; chưa xác minh quyền phân phối

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "data_version": "0.0.0-g0",
+  "status": "draft",
+  "generated_at": "2026-11-15T01:45:04+00:00",
+  "counts": {
+    "concepts": 30,
+    "entries": 32,
+    "forms": 35,
+    "senses": 34,
+    "relations": 14,
+    "evidence": 44,
+    "emotions": 0,
+    "reviews": 0
+  },
+  "approved_concepts": 0
+}
