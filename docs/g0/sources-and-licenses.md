@@ -1,5 +1,10 @@
 # Nguồn và giấy phép — quy trình G0
 
+**Cập nhật 23/11/2026:** chủ dự án đã cho phép chia sẻ `data/local/` và push Git
+ngày 22/11, lưu tại [quyết định chia sẻ](../../configs/data-sharing.json). Phần
+quy trình bên dưới ghi yêu cầu thẩm định nguồn, không hủy quyền chia sẻ đã cấp.
+Lựa chọn cấp giấy phép tái sử dụng riêng được trình bày trong [bàn giao G0](handoff-2026-11-23.md).
+
 Registry: `data/licenses/sources.csv`. Mỗi Evidence phải tham chiếu một nguồn
 đã đăng ký. Tách quyết định giấy phép của mã nguồn khỏi giấy phép dữ liệu.
 

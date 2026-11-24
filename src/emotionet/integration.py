@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 
@@ -127,38 +128,25 @@ def truncate_text_to_visible_window(
         if len(tokens) <= max_length:
             return text
 
-        words = text.split()
-        low, high = 1, len(words)
-        best_text = ""
-        while low <= high:
-            mid = (low + high) // 2
-            cand = " ".join(words[:mid])
-            if len(tokenizer_fn(cand)) <= max_length:
-                best_text = cand
-                low = mid + 1
-            else:
-                high = mid - 1
-
-        # If even a single word exceeds max_length (e.g. char tokenizer or subwords with max_length=1),
-        # slice characters of the first word so that len(tokenizer_fn(best_text)) <= max_length is strictly guaranteed.
-        if not best_text and words:
-            first_word = words[0]
-            low_c, high_c = 1, len(first_word)
-            while low_c <= high_c:
-                mid_c = (low_c + high_c) // 2
-                cand_c = first_word[:mid_c]
-                if len(tokenizer_fn(cand_c)) <= max_length:
-                    best_text = cand_c
-                    low_c = mid_c + 1
-                else:
-                    high_c = mid_c - 1
-
-        return best_text
+        # Preserve the original prefix, including whitespace. A length check alone
+        # is insufficient: re-tokenizing a prefix may change subword IDs, and token
+        # counts need not be monotonic. Search conservatively without binary search.
+        # Supplying a decoder avoids this potentially expensive fallback.
+        visible_tokens = list(tokens[:max_length])
+        for end in range(len(text) - 1, 0, -1):
+            candidate = text[:end]
+            candidate_tokens = list(tokenizer_fn(candidate))
+            if (0 < len(candidate_tokens) <= max_length
+                    and candidate_tokens == visible_tokens[:len(candidate_tokens)]):
+                return candidate
+        # No nonempty prefix could be verified against the encoder's tokens.
+        return ""
     else:
-        # Word-level fallback
-        words = text.split()
+        # Explicit word-level fallback when no encoder tokenizer was supplied.
+        # Use source offsets so leading/repeated whitespace remains unchanged.
+        words = list(re.finditer(r"\S+", text))
         if len(words) > max_length:
-            return " ".join(words[:max_length])
+            return text[:words[max_length - 1].end()]
         return text
 
 
@@ -169,7 +157,11 @@ def validate_precomputed_features_cache(
     feature_extractor: Optional[FeatureExtractor] = None,
     ids: Optional[List[str]] = None,
 ) -> np.ndarray:
-    """Validate that precomputed features cache matches the dataset and token window."""
+    """Validate every cached column against the current visible-text extractor.
+
+    Without an extractor, row count and max_length cannot establish cache validity.
+    Raw arrays remain supported when an extractor is provided.
+    """
     if isinstance(precomputed, dict):
         cached_max_len = precomputed.get("max_length")
         if cached_max_len is not None and cached_max_len != max_length:
@@ -177,30 +169,31 @@ def validate_precomputed_features_cache(
                 f"precomputed_features cache max_length mismatch: cache was created with max_length={cached_max_len}, "
                 f"but dataset requested max_length={max_length}."
             )
+        cached_ids = precomputed.get("ids")
+        if cached_ids is not None and ids is not None and list(cached_ids) != list(ids):
+            raise ValueError("precomputed_features cache sample IDs/order mismatch")
         feats = precomputed["features"]
     else:
         feats = precomputed
 
-    if len(feats) != len(visible_texts):
-        raise ValueError(
-            f"Precomputed features length {len(feats)} does not match dataset length {len(visible_texts)}"
-        )
+    if feature_extractor is None:
+        raise ValueError("precomputed_features requires feature_extractor to validate the token window")
+    feats = np.asarray(feats, dtype=np.float32)
+    expected_shape = (len(visible_texts), feature_extractor.manifest.total_dim)
+    if feats.shape != expected_shape:
+        raise ValueError(f"precomputed_features shape mismatch: {feats.shape}, expected {expected_shape}")
+    if not np.isfinite(feats).all():
+        raise ValueError("precomputed_features must contain only finite values")
 
-    # Audit sample consistency against visible_text if feature_extractor is available
-    if feature_extractor is not None:
-        for i, vis_text in enumerate(visible_texts):
-            expected_feat = feature_extractor.extract(vis_text)
-            cached_feat = feats[i]
-            # Check F1/F2 emotion positions (first 54 dims): if visible_text has 0 emotion counts,
-            # but cached_feat has non-zero emotion counts, it proves cache was created on an untruncated window!
-            if expected_feat[:54].sum() == 0 and cached_feat[:54].sum() > 0:
-                sample_id = ids[i] if ids else str(i)
-                raise ValueError(
-                    f"precomputed_features cache validation failed at sample {i} (id={sample_id}): "
-                    f"visible_text='{vis_text}' contains no lexical emotion matches in the token window, "
-                    f"but cached feature vector contains active emotion features ({cached_feat[:54].sum():.2f}). "
-                    f"Cache was created on a different token truncation window."
-                )
+    for i, vis_text in enumerate(visible_texts):
+        expected_feat = feature_extractor.extract(vis_text)
+        if not np.allclose(feats[i], expected_feat, atol=1e-6, rtol=0.0):
+            sample_id = ids[i] if ids else str(i)
+            raise ValueError(
+                f"precomputed_features cache validation failed at sample {i} (id={sample_id}): "
+                "cached features differ from extraction on the current visible text. "
+                "Rebuild the cache with the current token window, sample order, lexicon and extractor."
+            )
 
     return feats
 
@@ -213,7 +206,7 @@ class ViGoEmotionsDataset(Dataset):
         csv_path: Union[str, Path],
         num_labels: int = 28,
         feature_extractor: Optional[FeatureExtractor] = None,
-        precomputed_features: Optional[np.ndarray] = None,
+        precomputed_features: Optional[Union[np.ndarray, Dict[str, Any]]] = None,
         tokenizer: Optional[Any] = None,
         tokenizer_fn: Optional[Callable[[str], List[int]]] = None,
         tokenizer_decode_fn: Optional[Callable[[List[int]], str]] = None,

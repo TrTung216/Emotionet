@@ -1,5 +1,10 @@
 # Quy tắc nghĩa, quan hệ và kiểm duyệt
 
+**Cập nhật 23/11/2026:** 30 fixture tổng quát ở cuối tài liệu vẫn là candidate.
+Bộ mẫu G0 miền cảm xúc [g0-emotion-v1](../../data/seeds/g0-emotion-v1/samples.jsonl)
+kế thừa 30 quyết định nghĩa đã có trong seed v2; không phải review mới hoặc chứng
+nhận độc lập. Quy tắc ánh xạ và trạng thái theo [đặc tả nghiên cứu](research-spec-v1.md).
+
 ## Phân biệt nghĩa
 
 1. Xác định lemma, POS và cách dùng qua ví dụ.

@@ -1,0 +1,113 @@
+[
+  {
+    "type": "synonym",
+    "candidate": "yêu quý",
+    "target_synset_id": "syn_3d86b42296cd6c36",
+    "target_lemmas": [
+      "yêu",
+      "thương",
+      "yêu quý"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "nể",
+    "target_synset_id": "syn_770c2e9f56867e77",
+    "target_lemmas": [
+      "khâm phục",
+      "nể",
+      "phục"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "phục",
+    "target_synset_id": "syn_770c2e9f56867e77",
+    "target_lemmas": [
+      "khâm phục",
+      "nể",
+      "phục"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "cám ơn",
+    "target_synset_id": "syn_1560f3c8e023185b",
+    "target_lemmas": [
+      "biết ơn",
+      "cám ơn"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "sợ sệt",
+    "target_synset_id": "syn_4575c2be0fc2df6e",
+    "target_lemmas": [
+      "sợ hãi",
+      "sợ sệt"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "lo âu",
+    "target_synset_id": "syn_13a9a091c39694b1",
+    "target_lemmas": [
+      "lo",
+      "lo lắng",
+      "lo âu"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "tiếc nuối",
+    "target_synset_id": "syn_52309529a62e915d",
+    "target_lemmas": [
+      "hối hận",
+      "tiếc nuối",
+      "day dứt",
+      "hối tiếc"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "day dứt",
+    "target_synset_id": "syn_52309529a62e915d",
+    "target_lemmas": [
+      "hối hận",
+      "tiếc nuối",
+      "day dứt",
+      "hối tiếc"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "hối tiếc",
+    "target_synset_id": "syn_52309529a62e915d",
+    "target_lemmas": [
+      "hối hận",
+      "tiếc nuối",
+      "day dứt",
+      "hối tiếc"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "đau lòng",
+    "target_synset_id": "syn_bfcacfd3e7930678",
+    "target_lemmas": [
+      "buồn",
+      "đau lòng",
+      "tủi thân"
+    ]
+  },
+  {
+    "type": "synonym",
+    "candidate": "tủi thân",
+    "target_synset_id": "syn_bfcacfd3e7930678",
+    "target_lemmas": [
+      "buồn",
+      "đau lòng",
+      "tủi thân"
+    ]
+  }
+]

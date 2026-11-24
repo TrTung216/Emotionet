@@ -1,5 +1,26 @@
 # Kiểm tra kỹ thuật bản nháp G0
 
+## Nghiệm thu profile cảm xúc — 23/11/2026
+
+- `python scripts/prepare_g0_handoff.py --check`: đạt; 30 nghĩa từ review có sẵn,
+  phủ 27 nhãn, đúng source hash và output hash. Không tự tạo review mới.
+- Đối chiếu trực tiếp 30 `dataset_id` và text ví dụ với `train.csv`: khớp toàn bộ.
+- `python scripts/validate_g0.py`: đạt cho 30 fixture tổng quát candidate cũ;
+  kết quả này không nâng trạng thái fixture.
+- Toàn bộ unit test: **49/49 đạt, 0 skip**, chạy bằng Python với `src` trong
+  đường dẫn import. Bao gồm hai test mới: từ chối sense có gloss khác review gốc;
+  từ chối lấy review ngữ cảnh validation làm bằng chứng train.
+- Liên kết tài liệu bàn giao và diff whitespace: đạt.
+- Chủ dự án chọn giữ quyền chia sẻ hiện tại, chưa cấp thêm giấy phép tái sử dụng.
+  Quyết định được lưu ở [g0-handoff.json](../../configs/g0-handoff.json).
+
+G0 hoàn thành theo [đặc tả miền cảm xúc](research-spec-v1.md) và
+[biên bản bàn giao](handoff-2026-11-23.md). Đây là nghiệm thu thiết kế; không phải
+đánh giá F1, chứng nhận nguồn bên ngoài hoặc hoàn thành G1. Kết quả ngày 15/11
+bên dưới được giữ để truy vết fixture ban đầu.
+
+## Lịch sử kiểm tra fixture tổng quát
+
 Ngày ghi nhận: 15/11/2026. Môi trường: Python 3.11.6 trên Windows.
 
 ## Kết quả

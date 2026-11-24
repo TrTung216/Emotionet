@@ -1,0 +1,22 @@
+{
+  "schema": "emotionet_research_seed_synsets_v2",
+  "data_version": "seed-synsets-v2",
+  "entries": 77,
+  "senses": 82,
+  "synsets": 66,
+  "relations": 29,
+  "cross_lemma_merges_applied": 5,
+  "embedding_synonyms_added": 11,
+  "emotion_label_count": 27,
+  "publication_status": "not_cleared",
+  "source_snapshot": "seed-synsets-v1",
+  "output_sha256": {
+    "applied_expansions.json": "0d5d1491ec414cb1cd0c7dd330ec0e34349466adad4b72d807b6423186fffa84",
+    "applied_merges.json": "0b7e1da4f0ffeb7923ac6f2e933308cdca85ad1ba1eb569964d5f1c3035e283c",
+    "entries.jsonl": "3108dc8db84453333802eb5383ca0ab353c471b1c08205d60dc66b456f45613a",
+    "evidence.jsonl": "520bda533289ae45416d5e4bc31bcf7cacab9c2fc2b751a357cafa6b1edb3b81",
+    "relations.jsonl": "1c83a64161ba45b19fa1ec633958d2ee3fd1d0eb55df1a3b6ea4f5119a40629a",
+    "senses.jsonl": "da7b7a7116fd12279d7147c6d25710e31384c19b60a6872ce06869165503ae39",
+    "synsets.jsonl": "e9b074ca5c633bc455ff62ec10c80172d054310f4637a3a6d51ca1c002f96f9a"
+  }
+}

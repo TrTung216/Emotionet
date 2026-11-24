@@ -1,5 +1,9 @@
 # Đặc tả dữ liệu v1 — dự thảo G0
 
+**Cập nhật 23/11/2026:** đây là schema tổng quát của fixture ban đầu. Hợp đồng G1
+cho mục tiêu cảm xúc, gồm mapping synset/concept, ID có sẵn, POS null và 27 nhãn,
+nằm trong [đặc tả nghiên cứu v1](research-spec-v1.md). Fixture cũ không bị migrate.
+
 JSONL UTF-8, một object mỗi dòng. SQLite G1 sẽ dùng các bảng tương ứng;
 schema version khởi đầu là `1`, data version bộ nháp là `0.0.0-g0`.
 

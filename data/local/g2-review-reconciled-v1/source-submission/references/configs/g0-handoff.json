@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "profile": "emotionet_vigoemotions_research_v1",
+  "prepared_on": "2026-11-23",
+  "scope": "Vietnamese sense lexicon for ViGoEmotions and GA-xLSTM",
+  "specification": "docs/g0/research-spec-v1.md",
+  "seed_selection": "configs/seed-selection.json",
+  "seed_source": "data/local/reviewed-seeds-v2/accepted-seeds.jsonl",
+  "sense_source": "data/local/seed-synsets-v1/senses.jsonl",
+  "context_source": "data/local/quality-resolution-v1/submitted_samples.csv",
+  "split_source": "data/local/sense-match-review-v1/accepted-split-senses.jsonl",
+  "taxonomy_source": "configs/vigoemotions-labels.json",
+  "sharing_authorization": "configs/data-sharing.json",
+  "sample_directory": "data/seeds/g0-emotion-v1",
+  "sample_count": 30,
+  "extra_terms": ["hạnh phúc", "yêu thương", "khó chịu"],
+  "selection_policy": "one reviewed unsplit sense per non-neutral label, plus three distinct reviewed expressions; require an existing positive train-context review",
+  "legacy_fixture_directory": "data/seeds/g0",
+  "legacy_fixtures_remain_candidates": true,
+  "independent_semantic_review_claimed": false,
+  "source_snapshots_mutated": false,
+  "g0_status": "complete",
+  "completed_on": "2026-11-23",
+  "license_policy_proposal": "retain existing sharing authorization without adding a new reuse license",
+  "license_policy_owner_decision": {
+    "date": "2026-11-23",
+    "authority": "project_owner_reply",
+    "policy": "retain_existing_sharing_no_additional_reuse_license",
+    "user_instruction": "Giữ quyền chia sẻ hiện tại, chưa cấp thêm giấy phép tái sử dụng (đề xuất)",
+    "third_party_terms_relicensed": false
+  }
+}

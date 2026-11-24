@@ -1,0 +1,28 @@
+{
+  "relation_rows": 29,
+  "decisions": {
+    "revise": 2,
+    "accept": 27
+  },
+  "final_predicates": {
+    "related_to": 26,
+    "antonym_of": 3
+  },
+  "missing_target_id_rows": 28,
+  "declared_but_missing_target_ids": [
+    "syn_tui_than"
+  ],
+  "distinct_target_forms": 24,
+  "target_form_definition_groups": 24,
+  "distinct_forms_without_declared_id": 23,
+  "missing_relation_evidence_locator_rows": 29,
+  "readonly_field_changes": [],
+  "snapshot_synsets": 66,
+  "snapshot_senses": 82,
+  "snapshot_entries_with_missing_pos": 77,
+  "previous_receipt_stale_output_hashes": [
+    "relation-review.csv"
+  ],
+  "decision_receipt_only": true,
+  "graph_edges_created": 0
+}

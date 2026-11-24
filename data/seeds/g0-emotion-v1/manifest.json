@@ -1,0 +1,51 @@
+{
+  "schema": "emotionet_g0_reviewed_examples_v1",
+  "prepared_on": "2026-11-23",
+  "sample_count": 30,
+  "reviewed_meanings": 30,
+  "emotion_labels": [
+    "amusement",
+    "excitement",
+    "joy",
+    "love",
+    "desire",
+    "optimism",
+    "caring",
+    "pride",
+    "admiration",
+    "gratitude",
+    "relief",
+    "approval",
+    "realization",
+    "surprise",
+    "curiosity",
+    "confusion",
+    "fear",
+    "nervousness",
+    "remorse",
+    "embarrassment",
+    "disappointment",
+    "sadness",
+    "grief",
+    "disgust",
+    "anger",
+    "annoyance",
+    "disapproval"
+  ],
+  "label_count": 27,
+  "context_split": "train",
+  "context_sampling": "existing_exploratory_positive_reviews_not_gold",
+  "independent_semantic_review_verified": false,
+  "input_sha256": {
+    "data/local/reviewed-seeds-v2/accepted-seeds.jsonl": "13055df5a15f3b1a99ee5c13d106db88ba4c44ef9ae395d5c3f4dc507ef1f249",
+    "data/local/seed-synsets-v1/senses.jsonl": "92040e2402224f284c0f6201ca7c5bd8c515e6196d45a6a3f91ed4a3dfa7e892",
+    "data/local/quality-resolution-v1/submitted_samples.csv": "52ed87d9825b272e6dc9a887b02e495e40723ef9da2e4bdffa0b7776eb678d6a",
+    "data/local/sense-match-review-v1/accepted-split-senses.jsonl": "b6e8064f8c412cbc4a85e6ed923ef61f9db70800cba499586788fce7e4eaddd6",
+    "configs/vigoemotions-labels.json": "3bfba6a9ffb8bd4497d56174732a4ec7abd9f58de1023c53abd594770dd4690b",
+    "configs/data-sharing.json": "4e1fe6f6246bb28b9814a4b1b51ff2a0964b98fed544212f82fe1dc3c5316513",
+    "configs/seed-selection.json": "f0f2aa58f37cd600fadafa7c144c58af2ae0167b71374f24b09dba453fe05e7c"
+  },
+  "output_sha256": {
+    "samples.jsonl": "ce3ee896b9525944065f800997ad17b708f8c3ad548f3ea98bee0b192b70a817"
+  }
+}

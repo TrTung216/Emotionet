@@ -1,0 +1,49 @@
+{
+  "schema": "emotionet_g2_review_packet_v1",
+  "prepared_on": "2026-11-24",
+  "status": "awaiting_human_review",
+  "summary": {
+    "synsets": 66,
+    "senses": 82,
+    "relations": 29,
+    "antonym_proposals": 5,
+    "relations_without_existing_target": 28,
+    "is_a_proposals": 18,
+    "new_approved_records": 0
+  },
+  "source_sha256": {
+    "data/local/seed-synsets-v2/applied_expansions.json": "0d5d1491ec414cb1cd0c7dd330ec0e34349466adad4b72d807b6423186fffa84",
+    "data/local/seed-synsets-v2/applied_merges.json": "0b7e1da4f0ffeb7923ac6f2e933308cdca85ad1ba1eb569964d5f1c3035e283c",
+    "data/local/seed-synsets-v2/entries.jsonl": "3108dc8db84453333802eb5383ca0ab353c471b1c08205d60dc66b456f45613a",
+    "data/local/seed-synsets-v2/evidence.jsonl": "520bda533289ae45416d5e4bc31bcf7cacab9c2fc2b751a357cafa6b1edb3b81",
+    "data/local/seed-synsets-v2/manifest.json": "74de8f0b4db4cd30772f997cf5e8282a48a6589f416e1448c8a166b15d89a5a3",
+    "data/local/seed-synsets-v2/relations.jsonl": "1c83a64161ba45b19fa1ec633958d2ee3fd1d0eb55df1a3b6ea4f5119a40629a",
+    "data/local/seed-synsets-v2/senses.jsonl": "da7b7a7116fd12279d7147c6d25710e31384c19b60a6872ce06869165503ae39",
+    "data/local/seed-synsets-v2/synsets.jsonl": "e9b074ca5c633bc455ff62ec10c80172d054310f4637a3a6d51ca1c002f96f9a",
+    "configs/g2-is-a-pilot.json": "27693253137d4d089e2b9a4b3906c06683dcdb403591f303020b83cb5a3e313c",
+    "data/local/embedding-expansion-v1/candidate-review.csv": "be0082dc18a1610d2a4e115919d6b4368a39b09f11d1fd46d143610232991e8f",
+    "data/local/seed-synsets-v1/senses.jsonl": "92040e2402224f284c0f6201ca7c5bd8c515e6196d45a6a3f91ed4a3dfa7e892",
+    "configs/data-sharing.json": "4e1fe6f6246bb28b9814a4b1b51ff2a0964b98fed544212f82fe1dc3c5316513",
+    "configs/g0-handoff.json": "5b119bbc211c4a7323642912a2b2d5de2a03dfe10fb553449fd2a0c657fa4beb"
+  },
+  "initial_output_sha256": {
+    "synset-review.csv": "a9a1ab403b2cdf4b07ca47af7771b40cf07e4052ce401272468ae5283bf69848",
+    "sense-reference.csv": "86072e87466e2fa26a1ca9873aa4a5b9fda3ffd04ac9fa5285ad7450103746f8",
+    "relation-review.csv": "ad7c7c7e4015c6532d2c1f0f5bc2693e4fa437bb93f48020a364fdb9f510a1c1",
+    "is-a-pilot-review.csv": "62ff5421e6198d12bf3316a133a31b3849152c4ed1fd7245db703ffb1813fcd2",
+    "references/data/local/seed-synsets-v2/applied_expansions.json": "0d5d1491ec414cb1cd0c7dd330ec0e34349466adad4b72d807b6423186fffa84",
+    "references/data/local/seed-synsets-v2/applied_merges.json": "0b7e1da4f0ffeb7923ac6f2e933308cdca85ad1ba1eb569964d5f1c3035e283c",
+    "references/data/local/seed-synsets-v2/entries.jsonl": "3108dc8db84453333802eb5383ca0ab353c471b1c08205d60dc66b456f45613a",
+    "references/data/local/seed-synsets-v2/evidence.jsonl": "520bda533289ae45416d5e4bc31bcf7cacab9c2fc2b751a357cafa6b1edb3b81",
+    "references/data/local/seed-synsets-v2/manifest.json": "74de8f0b4db4cd30772f997cf5e8282a48a6589f416e1448c8a166b15d89a5a3",
+    "references/data/local/seed-synsets-v2/relations.jsonl": "1c83a64161ba45b19fa1ec633958d2ee3fd1d0eb55df1a3b6ea4f5119a40629a",
+    "references/data/local/seed-synsets-v2/senses.jsonl": "da7b7a7116fd12279d7147c6d25710e31384c19b60a6872ce06869165503ae39",
+    "references/data/local/seed-synsets-v2/synsets.jsonl": "e9b074ca5c633bc455ff62ec10c80172d054310f4637a3a6d51ca1c002f96f9a",
+    "references/configs/g2-is-a-pilot.json": "27693253137d4d089e2b9a4b3906c06683dcdb403591f303020b83cb5a3e313c",
+    "references/data/local/embedding-expansion-v1/candidate-review.csv": "be0082dc18a1610d2a4e115919d6b4368a39b09f11d1fd46d143610232991e8f",
+    "references/data/local/seed-synsets-v1/senses.jsonl": "92040e2402224f284c0f6201ca7c5bd8c515e6196d45a6a3f91ed4a3dfa7e892",
+    "references/configs/data-sharing.json": "4e1fe6f6246bb28b9814a4b1b51ff2a0964b98fed544212f82fe1dc3c5316513",
+    "references/configs/g0-handoff.json": "5b119bbc211c4a7323642912a2b2d5de2a03dfe10fb553449fd2a0c657fa4beb"
+  },
+  "note": "Initial hashes describe the blank packet. Submitted reviews must be saved as a new version; never rewrite historical hashes."
+}

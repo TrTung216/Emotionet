@@ -1,2 +1,3 @@
 # Preserve exact snapshot bytes and manifest checksums on all platforms.
 data/local/** -text
+data/seeds/g0-emotion-v1/** -text

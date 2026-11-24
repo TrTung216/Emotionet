@@ -1,5 +1,19 @@
 # Báo cáo tiến độ Emotionet và timeline công việc còn lại
 
+**Lộ trình hiện hành từ 24/11/2026:**
+[Kế hoạch WordNet cảm xúc tiếng Việt v2](../Ke_hoach_WordNet_cam_xuc_tieng_Viet.md).
+Ưu tiên profile WordNet, chuẩn hóa/mở rộng synset và QA tài nguyên; GA–xLSTM
+chuyển sang giai đoạn ứng dụng sau bản lõi. Timeline bên dưới là lịch sử trước
+thay đổi định hướng, không còn dùng để giao mốc mới.
+
+**Cập nhật 23/11/2026:** G1 Core API đã triển khai và kiểm chứng (69 test đạt,
+cài wheel trong môi trường sạch); xem [bàn giao G1](../g1/handoff-2026-11-23.md).
+Bước tiếp theo là G2 — Semantic MVP. G0 đã đóng theo profile cảm xúc; xem
+[bàn giao G0](../g0/handoff-2026-11-23.md) và [kết quả nghiệm thu](../g0/validation-report.md).
+30 mẫu được lấy từ các nghĩa đã duyệt, không nâng approved cho fixture tổng quát.
+Chủ dự án đã chọn giữ quyền chia sẻ hiện tại, chưa cấp thêm giấy phép tái sử dụng.
+Các phần dưới là lịch sử ngày 21–22/11, không phải trạng thái mới nhất của G0.
+
 ## Cập nhật kiểm tra ngày 22/11/2026
 
 **Các mục 1–6 bên dưới giữ nguyên số liệu lịch sử ngày 21/11.** Kiểm tra ngày 22/11 phát hiện đã có review mới, snapshot v2 và mã thư viện mới; vì vậy các câu “240 cặp chờ duyệt”, “chưa có matcher/đặc trưng” trong trạng thái cũ không còn mô tả đầy đủ hiện trạng.

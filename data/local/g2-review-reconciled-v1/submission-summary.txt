@@ -1,0 +1,108 @@
+Kết quả rà soát Synset (synset-review.csv)
+
+Đã rà soát toàn bộ 66 synset, trong đó tập trung phân tích sâu 10 synset đa thành viên và từ mới mở rộng:
+
+Synset ID	Các Lemma	Quyết định thành viên	Nhận xét và khuyến nghị ngữ nghĩa
+syn_770c2e9f56867e77	khâm phục; nể; phục	revise	Từ nể có 2 hướng dùng: (1) nể phục phẩm chất tài năng (admiration); (2) kiêng nể, nể nang, ngại va chạm (không phải cảm xúc admiration). Cần bổ sung điều kiện ngữ cảnh cho sense nể để matcher không gán nhầm khi gặp ngữ cảnh xã giao/kiêng dè.
+syn_bfcacfd3e7930678	buồn; đau lòng; tủi thân	revise	Đề xuất tách tủi thân ra khỏi synset buồn chung (proposed_member_sense_ids: giữ buồn và đau lòng). tủi thân mang nét nghĩa phân biệt sâu sắc là "tự thương xót cho thân phận đơn độc, thiệt thòi của chính mình" (không thể thay thế cho buồn trong mọi văn cảnh); nên là concept riêng hoặc liên kết related_to.
+syn_1560f3c8e023185b	biết ơn; cám ơn	keep	Giữ chung synset với lưu ý: cám ơn là hành vi phát ngôn/giao tiếp (speech act / polite formula), trong khi biết ơn là trạng thái cảm xúc nội tâm sâu sắc.
+syn_3d86b42296cd6c36	yêu; thương; yêu quý	keep	3 thành viên tương đương cao trong miền tình cảm gắn bó tha thiết (love).
+syn_44b397ce0503a06f	nhẹ nhõm; nhẹ lòng	keep	Hoàn toàn đồng nghĩa trong việc trút bỏ gánh nặng, lo âu (relief).
+syn_ebc12cdc6ee516b9	đồng tình; tán thành	keep	Hoàn toàn đồng nghĩa trong hành vi nhất trí ủng hộ quan điểm (approval).
+syn_3d785a40877bae84	nhận ra; vỡ lẽ	keep	Hoàn toàn đồng nghĩa trong việc bất ngờ ngộ ra sự thật sau khi giải tỏa khúc mắc (realization).
+syn_4575c2be0fc2df6e	sợ hãi; sợ sệt	keep	Giữ trong fear, ghi nhận sợ sệt có thêm sắc thái rụt rè, e dè.
+syn_13a9a091c39694b1	lo; lo lắng; lo âu	keep	Hoàn toàn tương đương trong trạng thái bất an trước điều rủi ro (nervousness).
+syn_52309529a62e915d	hối hận; tiếc nuối; day dứt; hối tiếc	keep	Giữ chung trong miền remorse, ghi nhận tiếc nuối có thể do hoàn cảnh khách quan lỡ dịp.
+56 synset đơn lẻ còn lại	singleton	keep	Giữ nguyên định nghĩa và phân loại kế thừa từ snapshot v2.
+2. Kết quả thẩm định 18 cặp đề xuất Hypernym/Hyponym (is-a-pilot-review.csv)
+
+Áp dụng nghiêm ngặt 5 tiêu chuẩn của G2 (bao hàm một chiều, không tương đương 2 chiều, cùng loại khái niệm, đặc điểm phân biệt/phản ví dụ, toàn synset):
+
+A. Chấp thuận is_a (5 cặp — Thỏa mãn bao hàm một chiều chặt chẽ):
+vui mừng 
+→
+→ vui (accept): Vui mừng là dạng cụ thể của vui khi có biến cố/sự kiện đón nhận điều tốt lành hoặc kết quả mong đợi.
+yêu thương 
+→
+→ yêu (accept): Yêu thương là dạng tình cảm yêu gắn liền với ý thức trách nhiệm và hành vi săn sóc, che chở cụ thể.
+lo (caring) 
+→
+→ quan tâm (accept): Sense lo liệu, chu tất cho người khác là một dạng hành động hóa cụ thể của việc quan tâm.
+lo lắng cho (caring) 
+→
+→ quan tâm (accept): Dạng quan tâm đặc thù giới hạn vào sự an nguy và rủi ro của đối tượng.
+ăn năn 
+→
+→ hối hận (accept): Ăn năn bổ sung nét nghĩa đạo đức và ý chí phục thiện (mong muốn sửa chữa sai lầm) so với cảm giác hối hận chung.
+B. Đề nghị chỉnh sửa revise (4 cặp — Chuyển thành related_to do synset chưa ổn định hoặc thuần túy chênh lệch cường độ):
+đau buồn 
+→
+→ buồn (revise 
+→
+→ related_to): Khác biệt chủ yếu ở cường độ cực hạn (tột bậc) trước tang thương; synset cha đang chứa tủi thân cần tách nghĩa.
+phẫn nộ 
+→
+→ giận (revise 
+→
+→ related_to): Định nghĩa synset giận hiện tại quá hẹp ("trước hành động trái tai gai mắt hoặc thất hứa"), chưa bao trùm nguyên nhân bất công xã hội của phẫn nộ.
+kinh ngạc 
+→
+→ bất ngờ (revise 
+→
+→ related_to): Chênh lệch cường độ tột độ; tiêu chuẩn G2 quy định khác biệt cường độ đơn thuần chưa đủ lập phân cấp.
+sợ hãi;sợ sệt 
+→
+→ sợ (revise 
+→
+→ related_to): Synset con có mâu thuẫn nội tại giữa sợ hãi (cường độ cao, run rẩy) và sợ sệt (e dè, rụt rè).
+C. Bác bỏ reject (9 cặp — Không thỏa mãn điều kiện logic loại–cha):
+sầu 
+→
+→ buồn (reject 
+→
+→ related_to): Khác biệt sắc thái văn phong (trữ tình, cổ điển), không tạo thành subtype độc lập.
+bực mình 
+→
+→ khó chịu (reject 
+→
+→ related_to): Cận đồng nghĩa (near-synonyms) thuộc miền phiền toái; không có quan hệ bao hàm cha-con.
+khao khát 
+→
+→ mong muốn (reject 
+→
+→ related_to): Thuần túy là sự tăng cấp mức độ/cường độ mong muốn mãnh liệt.
+hãnh diện 
+→
+→ tự hào (reject 
+→
+→ related_to): Tương đương 2 chiều (định nghĩa tự hào hiện tại chứa chính từ "hãnh diện"); tiêu chuẩn G2 cấm dùng is_a thay cho xem xét đồng nghĩa.
+khiếp sợ 
+→
+→ sợ (reject 
+→
+→ related_to): Cường độ hoảng loạn cực điểm kèm phản ứng sinh lý (rụng rời tay chân).
+buồn bã 
+→
+→ buồn (reject 
+→
+→ related_to): Vi phạm tiêu chuẩn cùng loại khái niệm (định nghĩa buồn bã chứa cả nét mặt biểu hiện bên ngoài).
+ghê sợ 
+→
+→ sợ (reject 
+→
+→ related_to): Cảm xúc phức hợp lai ghép giữa ghê tởm (disgust) và sợ hãi (fear).
+ngượng ngùng 
+→
+→ xấu hổ (reject 
+→
+→ no_relation): Phản ví dụ rõ ràng: Sự ngượng ngùng, e thẹn khi mới quen hoặc khi được khen ngợi hoàn toàn không có cảm giác xấu hổ/hổ thẹn vì phạm lỗi.
+tiếc (disappointment) 
+→
+→ thất vọng (reject 
+→
+→ related_to): Cận đồng nghĩa trong miền hụt hẫng; hướng xử lý thích hợp là synonym_review.
+3. Kiểm chứng hệ thống
+Đã chạy kiểm tra hồi quy: toàn bộ 74/74 unit tests trong tests/ đều vượt qua (OK), bao gồm cả bộ test kiểm tra tính bất biến provenance trong tests/test_prepare_g2_review.py.
+File kết quả đã sẵn sàng tại:
+data/local/g2-review-submitted-v1/synset-review.csv
+data/local/g2-review-submitted-v1/is-a-pilot-review.csv

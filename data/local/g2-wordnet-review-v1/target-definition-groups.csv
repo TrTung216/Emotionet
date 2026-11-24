@@ -1,0 +1,25 @@
+﻿object_term,proposed_definition,source_review_ids,declared_target_ids,requires_sense_and_pos_review
+bình an,"Yên ổn, thanh thản, không gặp điều trắc trở hay mối lo sợ",g2_rel_984f1f6df244,,true
+chợt,"Bất ngờ, đột ngột xảy đến trong khoảnh khắc ngắn ngủi",g2_rel_97662ea5a444,,true
+cởi mở,"Thái độ hòa nhã, sẵn lòng chia sẻ và đón nhận người khác",g2_rel_90ac7fd56adc,,true
+dũng cảm,"Dám đối đầu với hiểm nguy, khó khăn mà không hề sợ hãi",g2_rel_aabcd8e17c29,,true
+dỗi,"Tỏ thái độ giận hờn, làm mình làm mẩy để biểu lộ sự không bằng lòng nhẹ",g2_rel_bab4d75a6bdf,,true
+khinh,"Coi thường, đánh giá thấp và không tôn trọng đối tượng",g2_rel_b7dfde146644;g2_rel_a5c88362a580,,true
+mông lung,"Mơ hồ, mờ mịt và không có điểm tựa xác định",g2_rel_57778d4e09d1,,true
+mến,"Có thiện cảm và lòng quý trọng, muốn gần gũi với ai đó",g2_rel_74e576f6ebd7,,true
+nhân ái,"Có tình cảm thương yêu, bao dung và sẵn lòng giúp đỡ đồng loại",g2_rel_c5182ff2223d,,true
+thú vui,"Hoạt động hoặc sở thích đem lại sự thư giãn, hào hứng cho tinh thần",g2_rel_da4e354c7e37,,true
+thất tình,Rơi vào cảnh bị từ chối hoặc tan vỡ trong tình cảm lứa đôi,g2_rel_d280b57a1b21,,true
+tinh tế,"Nhạy cảm, khéo léo và sâu sắc trong nhận thức hoặc ứng xử",g2_rel_252d726c52be,,true
+trò đùa,"Hành vi hoặc lời nói bông đùa nhằm gây cười, trêu vui",g2_rel_3e60dcb8d94d,,true
+tội nghiệp,"Gợi cảm giác thương hại, xót xa vì chịu nhiều thiệt thòi, bất hạnh",g2_rel_d67b2d7ac3a2;g2_rel_6acd1c9ec41d,,true
+tủi thân,"Nỗi buồn tủi cho thân phận đơn độc, thiệt thòi của chính mình",g2_rel_3c2babb98830,syn_tui_than,true
+vui tính,"Tính cách cởi mở, hay cười đùa và dễ mang lại niềm vui cho người khác",g2_rel_a1b35ccd3193,,true
+vô tư,"Thanh thản, không bận tâm lo nghĩ hay vướng bận toan tính",g2_rel_3c3a043d1b94,,true
+xót xa,"Xót thương, đau lòng một cách thấm thía trước cảnh ngộ éo le",g2_rel_bbc7b6e36c74;g2_rel_bc8f37dbc4dd,,true
+ác độc,"Có dã tâm hiểm ác, tàn nhẫn và sẵn sàng gây đau khổ cho người khác",g2_rel_0b7cc1161a8f;g2_rel_9d327117f2c6,,true
+ích kỷ,Chỉ biết vì lợi ích cá nhân của mình mà không màng đến người khác,g2_rel_7e6b6ca2fa47,,true
+đau xót,"Cảm giác đau đớn, xót xa sâu sắc trước nỗi đau của người khác",g2_rel_b52ad8b5d288;g2_rel_d74dde98d8a0,,true
+đúng đắn,"Phù hợp với chuẩn mực, sự thật và lẽ phải, không phạm sai lầm",g2_rel_802c1ae09c80,,true
+đồng cảm,"Hiểu thấu và cùng chia sẻ cảm xúc, rung động với người khác",g2_rel_ebb4558baa2d,,true
+ấm áp,"Cảm giác dễ chịu, chan chứa tình yêu thương và sự sẻ chia",g2_rel_24bb01e7425a,,true

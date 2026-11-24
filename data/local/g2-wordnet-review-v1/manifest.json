@@ -1,0 +1,67 @@
+{
+  "schema": "emotionet_wordnet_review_receipt_v1",
+  "received_on": "2026-11-24",
+  "status": "review_received_profile_and_migration_incomplete",
+  "summary": {
+    "relation_rows": 29,
+    "decisions": {
+      "revise": 2,
+      "accept": 27
+    },
+    "final_predicates": {
+      "related_to": 26,
+      "antonym_of": 3
+    },
+    "missing_target_id_rows": 28,
+    "declared_but_missing_target_ids": [
+      "syn_tui_than"
+    ],
+    "distinct_target_forms": 24,
+    "target_form_definition_groups": 24,
+    "distinct_forms_without_declared_id": 23,
+    "missing_relation_evidence_locator_rows": 29,
+    "readonly_field_changes": [],
+    "snapshot_synsets": 66,
+    "snapshot_senses": 82,
+    "snapshot_entries_with_missing_pos": 77,
+    "previous_receipt_stale_output_hashes": [
+      "relation-review.csv"
+    ],
+    "decision_receipt_only": true,
+    "graph_edges_created": 0
+  },
+  "source_sha256": {
+    "docs/g2/wordnet-profile-spec.md": "dbb7907138b5bbdfd91e20007591fddf7c71d06e1a1ea0047f363d87445fead3",
+    "src/emotionet/core.py": "0a00fde56255bcbe2e060635c5bc0da68fe70c92543065083440fac82e4b13d6",
+    "data/local/g2-review-v1/relation-review.csv": "ad7c7c7e4015c6532d2c1f0f5bc2693e4fa437bb93f48020a364fdb9f510a1c1",
+    "data/local/g2-review-submitted-v1/relation-review.csv": "7e190cf9db90ccba34c46fdd5ae664837884ee9374faf1be1a67aab777857455",
+    "data/local/g2-review-reconciled-v1/relation-review.csv": "7e190cf9db90ccba34c46fdd5ae664837884ee9374faf1be1a67aab777857455",
+    "data/local/g2-review-reconciled-v1/manifest.json": "c9422f5998db5a2b4052b7a550ca4e41c5a4445793dac52288738c43e4ff6266",
+    "data/local/g2-review-reconciled-v1/received-decisions.jsonl": "da0cc6f303c6492ab730112d4763d725018f9d62fea47d3a2f980397d21dd9f8",
+    "data/local/seed-synsets-v2/manifest.json": "74de8f0b4db4cd30772f997cf5e8282a48a6589f416e1448c8a166b15d89a5a3",
+    "data/local/seed-synsets-v2/entries.jsonl": "3108dc8db84453333802eb5383ca0ab353c471b1c08205d60dc66b456f45613a",
+    "data/local/seed-synsets-v2/senses.jsonl": "da7b7a7116fd12279d7147c6d25710e31384c19b60a6872ce06869165503ae39",
+    "data/local/seed-synsets-v2/synsets.jsonl": "e9b074ca5c633bc455ff62ec10c80172d054310f4637a3a6d51ca1c002f96f9a",
+    "data/local/seed-synsets-v2/relations.jsonl": "1c83a64161ba45b19fa1ec633958d2ee3fd1d0eb55df1a3b6ea4f5119a40629a",
+    "data/local/seed-synsets-v2/evidence.jsonl": "520bda533289ae45416d5e4bc31bcf7cacab9c2fc2b751a357cafa6b1edb3b81"
+  },
+  "output_sha256": {
+    "inputs/docs/g2/wordnet-profile-spec.md": "dbb7907138b5bbdfd91e20007591fddf7c71d06e1a1ea0047f363d87445fead3",
+    "inputs/src/emotionet/core.py": "0a00fde56255bcbe2e060635c5bc0da68fe70c92543065083440fac82e4b13d6",
+    "inputs/data/local/g2-review-v1/relation-review.csv": "ad7c7c7e4015c6532d2c1f0f5bc2693e4fa437bb93f48020a364fdb9f510a1c1",
+    "inputs/data/local/g2-review-submitted-v1/relation-review.csv": "7e190cf9db90ccba34c46fdd5ae664837884ee9374faf1be1a67aab777857455",
+    "inputs/data/local/g2-review-reconciled-v1/relation-review.csv": "7e190cf9db90ccba34c46fdd5ae664837884ee9374faf1be1a67aab777857455",
+    "inputs/data/local/g2-review-reconciled-v1/manifest.json": "c9422f5998db5a2b4052b7a550ca4e41c5a4445793dac52288738c43e4ff6266",
+    "inputs/data/local/g2-review-reconciled-v1/received-decisions.jsonl": "da0cc6f303c6492ab730112d4763d725018f9d62fea47d3a2f980397d21dd9f8",
+    "inputs/data/local/seed-synsets-v2/manifest.json": "74de8f0b4db4cd30772f997cf5e8282a48a6589f416e1448c8a166b15d89a5a3",
+    "inputs/data/local/seed-synsets-v2/entries.jsonl": "3108dc8db84453333802eb5383ca0ab353c471b1c08205d60dc66b456f45613a",
+    "inputs/data/local/seed-synsets-v2/senses.jsonl": "da7b7a7116fd12279d7147c6d25710e31384c19b60a6872ce06869165503ae39",
+    "inputs/data/local/seed-synsets-v2/synsets.jsonl": "e9b074ca5c633bc455ff62ec10c80172d054310f4637a3a6d51ca1c002f96f9a",
+    "inputs/data/local/seed-synsets-v2/relations.jsonl": "1c83a64161ba45b19fa1ec633958d2ee3fd1d0eb55df1a3b6ea4f5119a40629a",
+    "inputs/data/local/seed-synsets-v2/evidence.jsonl": "520bda533289ae45416d5e4bc31bcf7cacab9c2fc2b751a357cafa6b1edb3b81",
+    "target-definition-groups.csv": "bf3a3c33c8b1806781afbf5b27f1aa83b9f8bd490cac55f45f6997c392d7ef7d",
+    "audit.json": "d5e72d7896929660f4ff8bccc587791f83b41776a8725e8c18912d5edb04c2a3",
+    "received-relation-decisions.jsonl": "4e8e2b04f14a991daf9db712da187d63b23235828a51274f10dd7189bc530c8a"
+  },
+  "note": "Previous manifest mismatches are recorded, not rewritten. Target groups are drafting aids, not newly approved concepts."
+}

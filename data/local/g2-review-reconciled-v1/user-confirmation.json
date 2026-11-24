@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "confirmed_on": "2026-11-24",
+  "reviewer": "project_owner",
+  "timestamp_precision": "date_only",
+  "review_id": "g2_isa_56675b2120fa",
+  "subject_synset_id": "syn_65eaeca9b2cdb78b",
+  "object_synset_id": "syn_e2252f56ef0cf72b",
+  "decision": "revise",
+  "final_predicate": "related_to",
+  "user_confirmation": "Có, áp dụng cho sửng sốt → ngạc nhiên",
+  "resolution_notes": "Chủ dự án xác nhận quyết định trong tóm tắt ghi kinh ngạc → bất ngờ được áp dụng cho đúng cặp sửng sốt → ngạc nhiên của phiếu gốc: revise → related_to. Giữ lý do đã nộp về khác biệt cường độ; chưa tự tạo cạnh chính thức.",
+  "not_inferred": ["forward_entailment", "reverse_entailment", "reviewed_at"]
+}

@@ -1,5 +1,8 @@
 # Use case và tiêu chí chấp nhận v1 (dự thảo)
 
+**Cập nhật 23/11/2026:** bảng dưới giữ các tình huống tổng quát ban đầu. Use case
+nghiệm thu miền cảm xúc R01–R12 nằm tại [đặc tả nghiên cứu v1](research-spec-v1.md).
+
 Người dùng chính: lập trình viên NLP tra cứu tiếng Việt; người biên soạn và
 kiểm duyệt dữ liệu. Chưa có màn hình web hoặc xử lý đa người dùng trong MVP.
 

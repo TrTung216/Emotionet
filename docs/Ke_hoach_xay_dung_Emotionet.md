@@ -1,5 +1,9 @@
 # KẾ HOẠCH XÂY DỰNG THƯ VIỆN EMOTIONET
 
+> **Bản lịch sử v1.** Từ 24/11/2026, lộ trình hiện hành là
+> [Kế hoạch xây dựng WordNet cảm xúc tiếng Việt v2](Ke_hoach_WordNet_cam_xuc_tieng_Viet.md).
+> Nội dung bên dưới được giữ để đối chiếu, không phải lịch triển khai hiện tại.
+
 **Định hướng:** Thư viện từ điển từ vựng – ngữ nghĩa tiếng Việt, hỗ trợ từ đơn, cụm từ, khái niệm, quan hệ ngữ nghĩa và một lớp tri thức cảm xúc mở rộng  
 **Loại tài liệu:** Kế hoạch kỹ thuật và nghiên cứu (đề xuất)  
 **Phiên bản:** 1.0 — ngày 15/11/2026  

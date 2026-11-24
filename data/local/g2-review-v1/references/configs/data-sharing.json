@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-11-22",
+  "decision_authority": "project_owner_instruction",
+  "scope": "data/local/",
+  "sharing_authorized_by_owner": true,
+  "distribution_method": "regular_git",
+  "destination": "https://github.com/TrTung216/Emotionet.git",
+  "user_instruction": "được phép chia sẻ, push lên như thg",
+  "historical_snapshot_metadata_preserved": true
+}

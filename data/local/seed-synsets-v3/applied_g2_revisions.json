@@ -1,0 +1,147 @@
+{
+  "pos_assigned_count": 100,
+  "pos_distribution": {
+    "a": 59,
+    "v": 38,
+    "n": 2,
+    "r": 1
+  },
+  "membership_changes": [
+    {
+      "synset_id": "syn_bfcacfd3e7930678",
+      "removed_sense": "sense_cand_d6b678c30a79",
+      "created_synset": "syn_tui_than",
+      "action": "split_tui_than"
+    },
+    {
+      "synset_id": "syn_770c2e9f56867e77",
+      "retained_sense": "sense_cand_f871e0b10511",
+      "created_sense": "sense_cand_ne_s2",
+      "created_synset": "syn_kieng_ne",
+      "action": "split_ne_kieng_ne"
+    }
+  ],
+  "new_target_concepts": [
+    {
+      "lemma": "bình an",
+      "synset_id": "syn_binh_an",
+      "pos": "a"
+    },
+    {
+      "lemma": "chợt",
+      "synset_id": "syn_chot",
+      "pos": "r"
+    },
+    {
+      "lemma": "cởi mở",
+      "synset_id": "syn_coi_mo",
+      "pos": "a"
+    },
+    {
+      "lemma": "dũng cảm",
+      "synset_id": "syn_dung_cam",
+      "pos": "a"
+    },
+    {
+      "lemma": "dỗi",
+      "synset_id": "syn_doi",
+      "pos": "v"
+    },
+    {
+      "lemma": "khinh",
+      "synset_id": "syn_khinh",
+      "pos": "v"
+    },
+    {
+      "lemma": "mông lung",
+      "synset_id": "syn_mong_lung",
+      "pos": "a"
+    },
+    {
+      "lemma": "mến",
+      "synset_id": "syn_men",
+      "pos": "v"
+    },
+    {
+      "lemma": "nhân ái",
+      "synset_id": "syn_nhan_ai",
+      "pos": "a"
+    },
+    {
+      "lemma": "thú vui",
+      "synset_id": "syn_thu_vui",
+      "pos": "n"
+    },
+    {
+      "lemma": "thất tình",
+      "synset_id": "syn_that_tinh",
+      "pos": "v"
+    },
+    {
+      "lemma": "tinh tế",
+      "synset_id": "syn_tinh_te",
+      "pos": "a"
+    },
+    {
+      "lemma": "trò đùa",
+      "synset_id": "syn_tro_dua",
+      "pos": "n"
+    },
+    {
+      "lemma": "tội nghiệp",
+      "synset_id": "syn_toi_nghiep",
+      "pos": "a"
+    },
+    {
+      "lemma": "vui tính",
+      "synset_id": "syn_vui_tinh",
+      "pos": "a"
+    },
+    {
+      "lemma": "vô tư",
+      "synset_id": "syn_vo_tu",
+      "pos": "a"
+    },
+    {
+      "lemma": "xót xa",
+      "synset_id": "syn_xot_xa",
+      "pos": "a"
+    },
+    {
+      "lemma": "ác độc",
+      "synset_id": "syn_ac_doc",
+      "pos": "a"
+    },
+    {
+      "lemma": "ích kỷ",
+      "synset_id": "syn_ich_ky",
+      "pos": "a"
+    },
+    {
+      "lemma": "đau xót",
+      "synset_id": "syn_dau_xot",
+      "pos": "a"
+    },
+    {
+      "lemma": "đúng đắn",
+      "synset_id": "syn_dung_dan",
+      "pos": "a"
+    },
+    {
+      "lemma": "đồng cảm",
+      "synset_id": "syn_dong_cam",
+      "pos": "v"
+    },
+    {
+      "lemma": "ấm áp",
+      "synset_id": "syn_am_ap",
+      "pos": "a"
+    }
+  ],
+  "relations_summary": {
+    "total_relations": 35,
+    "is_a_edges": 5,
+    "related_to_edges": 30,
+    "reconciled_antonym_to_related_to": 3
+  }
+}
